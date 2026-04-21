@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Franco Martín Durán | Maestro Mayor de Obras · CABA</title>
   <meta name="description" content="Dirección de obra, planos, legalizaciones, refacciones, instalaciones sanitarias y de gas, habilitaciones y Ley 257. Matrículado CPIC. CABA." />
+  <meta property="og:title" content="Franco Martín Durán | Maestro Mayor de Obras · CABA" />
+  <meta property="og:description" content="Dirección de obra, planos, habilitaciones, Ley 257, instalaciones sanitarias y de gas. Matriculado CPIC. Trabajo en toda CABA." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://francoduran.com.ar" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Franco Martín Durán | Maestro Mayor de Obras" />
+  <meta name="twitter:description" content="Dirección de obra, planos, habilitaciones y Ley 257 en CABA. Matriculado CPIC." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -841,6 +849,102 @@
     .galeria-item:hover .galeria-label { opacity: 1; }
 
     /* ── RESPONSIVE ── */
+    /* ── DIFERENCIADORES ── */
+    #porque { background: var(--dark); }
+
+    .porque-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .porque-card {
+      background: var(--dark3);
+      padding: 36px 28px;
+      border-top: 2px solid transparent;
+      transition: border-color .3s, background .3s;
+    }
+
+    .porque-card:hover { background: var(--dark4); border-color: var(--gold); }
+
+    .porque-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 48px;
+      color: rgba(201,168,76,0.15);
+      line-height: 1; margin-bottom: 12px;
+    }
+
+    .porque-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 20px;
+      text-transform: uppercase; color: var(--white);
+      margin-bottom: 10px; letter-spacing: 0.5px;
+    }
+
+    .porque-card p { font-size: 14px; line-height: 1.7; color: #888; }
+
+    /* ── BARRIOS ── */
+    #zona { background: var(--dark2); }
+
+    .barrios-wrap {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin-top: 36px;
+    }
+
+    .barrio-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px; font-weight: 600;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--light);
+      background: var(--dark3);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 2px;
+      padding: 8px 14px;
+      transition: border-color .2s, color .2s;
+    }
+
+    .barrio-tag:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── FAQ ── */
+    #faq { background: var(--dark3); }
+
+    .faq-list { max-width: 800px; }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .faq-question {
+      width: 100%; background: none; border: none;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 0;
+      cursor: pointer;
+      text-align: left; gap: 16px;
+    }
+
+    .faq-question span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 18px;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      color: var(--white);
+    }
+
+    .faq-icon {
+      width: 24px; height: 24px; flex-shrink: 0;
+      color: var(--gold); font-size: 22px;
+      transition: transform .3s;
+    }
+
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    .faq-answer {
+      display: none;
+      padding: 0 0 20px;
+      font-size: 15px; line-height: 1.7; color: #999;
+    }
+
+    .faq-item.open .faq-answer { display: block; }
+
     /* Hamburguesa */
     .hamburger {
       display: none;
@@ -902,6 +1006,7 @@
       #stats { grid-template-columns: repeat(2, 1fr); }
       .stat-item:nth-child(2) { border-right: none; }
       .services-grid { grid-template-columns: 1fr; }
+      .porque-grid { grid-template-columns: 1fr; }
       .galeria-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
       .galeria-item:first-child { grid-column: span 2; grid-row: span 1; height: 220px; }
       .galeria-item { height: 180px; }
@@ -937,7 +1042,7 @@
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#galeria">Galería</a></li>
     <li><a href="#ley257">Ley 257</a></li>
-    <li><a href="#sobre">Nosotros</a></li>
+    <li><a href="#sobre">Sobre Mí</a></li>
     <li><a href="#proceso">Proceso</a></li>
     <li><a href="#contacto" class="nav-cta">Contacto</a></li>
   </ul>
@@ -952,6 +1057,7 @@
   <a href="#ley257">Ley 257</a>
   <a href="#sobre">Sobre Mí</a>
   <a href="#proceso">Proceso</a>
+  <a href="#faq">Preguntas</a>
   <a href="#contacto" class="cta">Solicitar Presupuesto</a>
 </div>
 
@@ -1093,8 +1199,8 @@
     <div class="stat-label">Matrícula Activa</div>
   </div>
   <div class="stat-item">
-    <div class="stat-num">8</div>
-    <div class="stat-label">Especialidades</div>
+    <div class="stat-num">100%</div>
+    <div class="stat-label">Obras Entregadas</div>
   </div>
   <div class="stat-item">
     <div class="stat-num">CABA</div>
@@ -1119,7 +1225,7 @@
         <line x1="14" y1="14" x2="16" y2="14"/><line x1="14" y1="28" x2="16" y2="28"/>
       </svg>
       <h3>Dirección de Obra</h3>
-      <p>Conducción técnica y legal de obras de arquitectura. Control de calidad, materiales, plazos y cumplimiento normativo según el Código de Edificación de CABA.</p>
+      <p>Conducción técnica y legal de obras nuevas, ampliaciones y refacciones. Me hago cargo del control de calidad, coordinación de gremios, cumplimiento del Código de Edificación de CABA y representación ante el GCBA. Vos te despreocupás — yo respondo con mi matrícula.</p>
     </div>
 
     <div class="service-card">
@@ -1129,7 +1235,7 @@
         <rect x="20" y="28" width="8" height="12"/><line x1="16" y1="20" x2="32" y2="20"/>
       </svg>
       <h3>Planos y Legalizaciones</h3>
-      <p>Confección de planos de obra nueva, ampliaciones, regularizaciones y trámites de aprobación ante la Dirección General de Registro de Obras y Catastro (DGROC).</p>
+      <p>Confección de planos de obra nueva, ampliaciones y regularizaciones de construcciones existentes. Gestiono la aprobación ante la DGROC (Dirección General de Registro de Obras y Catastro). Regularizo metros cuadrados no declarados antes de que llegue una inspección.</p>
     </div>
 
     <div class="service-card">
@@ -1138,7 +1244,7 @@
         <path d="M6 42l8-8 6 6 16-20 6 6"/><circle cx="36" cy="16" r="8"/><path d="M32 16h8M36 12v8"/>
       </svg>
       <h3>Refacciones</h3>
-      <p>Remodelaciones integrales y parciales de viviendas, locales y oficinas. Coordinación de gremios, provisión de materiales y control de calidad en cada etapa.</p>
+      <p>Remodelaciones integrales o parciales de viviendas, departamentos, locales y oficinas. Coordino albañiles, plomeros, electricistas y pintores. Presupuesto cerrado sin sorpresas: lo que acordamos al inicio es lo que pagás al final.</p>
     </div>
 
     <div class="service-card">
@@ -1149,7 +1255,7 @@
         <path d="M20 36c0 4 8 4 8 0"/>
       </svg>
       <h3>Instalaciones Sanitarias</h3>
-      <p>Diseño y ejecución de instalaciones de agua fría, caliente y desagüe. Reparaciones, ampliaciones y certificación de instalaciones existentes.</p>
+      <p>Diseño y ejecución de redes de agua fría, caliente y desagüe cloacal. Reparación de pérdidas, cambio de columnas, ampliaciones de baños y cocinas. Trabajo con materiales certificados y entrego planos de la instalación ejecutada.</p>
     </div>
 
     <div class="service-card">
@@ -1161,7 +1267,7 @@
         <path d="M16 20 Q24 16 32 20"/>
       </svg>
       <h3>Instalaciones de Gas</h3>
-      <p>Instalación, modificación y certificación de redes de gas natural. Habilitación de instalaciones ante Metrogas. Cumplimiento de normativa NAG 200 y REGLÓN.</p>
+      <p>Instalación, modificación y certificación de redes de gas natural y GNC. Gestiono la habilitación ante Metrogas y emito el certificado de aptitud. Si tenés una instalación sin certificar o fuera de norma, la regularizo antes de que represente un riesgo o una multa.</p>
     </div>
 
     <div class="service-card">
@@ -1172,7 +1278,7 @@
         <circle cx="34" cy="32" r="4"/><path d="M34 28v4l2 2"/>
       </svg>
       <h3>Habilitaciones GCBA</h3>
-      <p>Gestión de habilitaciones comerciales, certificados de uso conforme, verificaciones de uso y habilitaciones de actividades ante organismos del Gobierno de CABA.</p>
+      <p>Gestión de habilitaciones comerciales, certificados de uso conforme y verificaciones de aptitud ambiental ante el GCBA. Si querés abrir un local, consultorio, depósito o taller en CABA, yo me encargo de todo el trámite — desde el relevamiento hasta la habilitación aprobada.</p>
     </div>
 
   </div>
@@ -1355,6 +1461,150 @@
   </div>
 </section>
 
+<!-- POR QUÉ ELEGIRME -->
+<section id="porque">
+  <div class="section-header">
+    <p class="section-tag">· Por qué elegirnos ·</p>
+    <h2 class="section-title">Por qué elegir <span class="accent">Franco Durán</span></h2>
+    <p class="section-desc">Hay muchos profesionales en CABA. Estos son los motivos concretos por los que mis clientes me vuelven a llamar.</p>
+  </div>
+  <div class="porque-grid">
+    <div class="porque-card">
+      <div class="porque-num">01</div>
+      <h3>Matrícula CPIC activa</h3>
+      <p>Trabajo con firma profesional habilitada. Eso significa que el GCBA reconoce mis documentos, mis certificados son válidos y vos tenés respaldo legal en cada obra o trámite.</p>
+    </div>
+    <div class="porque-card">
+      <div class="porque-num">02</div>
+      <h3>Presupuesto cerrado</h3>
+      <p>Lo que acordamos al inicio es lo que pagás. Sin sorpresas de materiales, mano de obra ni imprevistos que caen de la nada. Si algo cambia, lo hablamos antes de ejecutarlo.</p>
+    </div>
+    <div class="porque-card">
+      <div class="porque-num">03</div>
+      <h3>Un interlocutor, todo resuelto</h3>
+      <p>No necesitás buscar un plomero por un lado, un gasista por otro y un gestor por otro. Yo coordino todos los gremios y trámites. Tenés un solo número de contacto para todo.</p>
+    </div>
+    <div class="porque-card">
+      <div class="porque-num">04</div>
+      <h3>Docente técnico en actividad</h3>
+      <p>Soy docente de escuela técnica del GCBA. Eso no es un dato de color: significa que estoy permanentemente actualizado en normativa, materiales y técnicas constructivas nuevas.</p>
+    </div>
+    <div class="porque-card">
+      <div class="porque-num">05</div>
+      <h3>Seguimiento real de la obra</h3>
+      <p>No firmo y me voy. Estoy presente en las visitas de inspección, controlo los avances y te informo el estado en cada etapa. Tu obra no queda librada a que el capataz haga lo que quiera.</p>
+    </div>
+    <div class="porque-card">
+      <div class="porque-num">06</div>
+      <h3>Asesoramiento sin cargo</h3>
+      <p>La primera consulta es siempre gratis. Te digo exactamente qué necesitás, qué trámites corresponden y cuánto puede costar — sin compromiso y sin letra chica.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ZONA DE COBERTURA -->
+<section id="zona">
+  <div class="section-header">
+    <p class="section-tag">· Cobertura ·</p>
+    <h2 class="section-title">Trabajo en toda <span class="accent">CABA</span></h2>
+    <p class="section-desc">Opero en todos los barrios de la Ciudad de Buenos Aires. Si tu obra o trámite es en alguno de estos barrios, podemos arrancar.</p>
+  </div>
+  <div class="barrios-wrap">
+    <span class="barrio-tag">Palermo</span>
+    <span class="barrio-tag">Belgrano</span>
+    <span class="barrio-tag">Caballito</span>
+    <span class="barrio-tag">Almagro</span>
+    <span class="barrio-tag">Villa Crespo</span>
+    <span class="barrio-tag">Chacarita</span>
+    <span class="barrio-tag">Villa del Parque</span>
+    <span class="barrio-tag">Flores</span>
+    <span class="barrio-tag">San Cristóbal</span>
+    <span class="barrio-tag">Boedo</span>
+    <span class="barrio-tag">Parque Chacabuco</span>
+    <span class="barrio-tag">Nueva Pompeya</span>
+    <span class="barrio-tag">Villa Lugano</span>
+    <span class="barrio-tag">Mataderos</span>
+    <span class="barrio-tag">Liniers</span>
+    <span class="barrio-tag">Devoto</span>
+    <span class="barrio-tag">Villa del Parque</span>
+    <span class="barrio-tag">Saavedra</span>
+    <span class="barrio-tag">Coghlan</span>
+    <span class="barrio-tag">Núñez</span>
+    <span class="barrio-tag">Colegiales</span>
+    <span class="barrio-tag">Villa Urquiza</span>
+    <span class="barrio-tag">Paternal</span>
+    <span class="barrio-tag">Balvanera</span>
+    <span class="barrio-tag">San Nicolás</span>
+    <span class="barrio-tag">Recoleta</span>
+    <span class="barrio-tag">Retiro</span>
+    <span class="barrio-tag">San Telmo</span>
+    <span class="barrio-tag">La Boca</span>
+    <span class="barrio-tag">Barracas</span>
+    <span class="barrio-tag">Puerto Madero</span>
+    <span class="barrio-tag">Montserrat</span>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-header">
+    <p class="section-tag">· Preguntas Frecuentes ·</p>
+    <h2 class="section-title">Lo que siempre <span class="accent">preguntan</span></h2>
+    <p class="section-desc">Las dudas más comunes antes de arrancar un proyecto o trámite.</p>
+  </div>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>¿Cuánto tarda una habilitación comercial en CABA?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Depende del tipo de actividad. Una habilitación por inicio de actividades sin obras puede tardar entre 30 y 90 días hábiles si la documentación está completa. Si requiere verificación de aptitud ambiental, puede extenderse. Yo te hago el diagnóstico previo para saber exactamente qué aplica en tu caso.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>¿Necesito planos para hacer una refacción en mi departamento?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Depende del alcance. Trabajos menores como pintura o pisos no requieren planos. Pero si movés tabiques, modificás baños, cambiás instalaciones o hacés cualquier obra que altere la estructura, sí necesitás planos y aviso de obra ante la DGROC. Sin eso, la obra puede ser clausurada o generar problemas al vender el inmueble.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>¿Qué pasa si mi edificio no hizo la Ley 257?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">El GCBA puede intimar al consorcio, aplicar multas y en casos de riesgo clausurar sectores del edificio. Además, si hay un accidente por caída de mampostería, los propietarios pueden enfrentar responsabilidad civil. La Ley 257 obliga a certificar cada 10 años el estado de fachadas y balcones. Si no lo hicieron, conviene regularizarlo cuanto antes.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>¿Cómo es el proceso para regularizar metros cuadrados no declarados?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Se hace a través de un plano de regularización ante la DGROC. Relevamos lo construido, confeccionamos los planos en base a lo que existe, y los presentamos para su aprobación. Una vez aprobados, los metros quedan declarados y el inmueble puede escriturarse, venderse o hipotecarse sin inconvenientes.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>¿Cuánto cuesta una dirección de obra?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Los honorarios de dirección de obra se calculan como un porcentaje del presupuesto total de la obra, siguiendo los aranceles del CPIC. En general ronda entre el 8% y el 12% del valor de la obra, y cubre todas las visitas, la firma de los planos, las inspecciones y la documentación final. Es una inversión que protege el resto de tu inversión.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>¿Trabajás solo o con un equipo?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Trabajo en forma independiente pero cuento con una red consolidada de profesionales y gremios de confianza: albañiles, plomeros, gasistas, electricistas y pintores. Para cada obra armo el equipo según el trabajo específico, siempre supervisando personalmente los avances.</div>
+    </div>
+
+  </div>
+</section>
+
 <!-- CONTACTO -->
 <section id="contacto">
   <div class="contacto-inner">
@@ -1447,7 +1697,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <p class="footer-copy">© 2025 <span>Franco Martín Durán</span> — Maestro Mayor de Obras · CPIC · CABA</p>
+  <p class="footer-copy">© 2026 <span>Franco Martín Durán</span> — Maestro Mayor de Obras · CPIC · CABA</p>
   <div class="footer-links">
     <a href="#servicios">Servicios</a>
     <a href="#ley257">Ley 257</a>
@@ -1464,10 +1714,31 @@
 </a>
 
 <script>
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-    this.style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+    const form = this;
+    const btn = form.querySelector('.btn-form');
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        btn.textContent = 'Enviar Consulta';
+        btn.disabled = false;
+        alert('Hubo un error. Por favor escribime por WhatsApp.');
+      }
+    } catch(err) {
+      btn.textContent = 'Enviar Consulta';
+      btn.disabled = false;
+      alert('Hubo un error. Por favor escribime por WhatsApp.');
+    }
   });
 
   const hamburger = document.getElementById('hamburger');
@@ -1475,6 +1746,15 @@
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('open');
     mobileMenu.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
   });
 
   document.querySelectorAll('a[href^="#"]').forEach(a => {
