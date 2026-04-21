@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Franco Martín Durán | Maestro Mayor de Obras · CABA</title>
+  <meta name="description" content="Dirección de obra, planos, legalizaciones, refacciones, instalaciones sanitarias y de gas, habilitaciones y Ley 257. Matrículado CPIC. CABA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e4c97a;
+      --dark: #0d0d0d;
+      --dark2: #141414;
+      --dark3: #1c1c1c;
+      --dark4: #242424;
+      --gray: #888;
+      --light: #f0ece4;
+      --white: #fff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--dark);
+      color: var(--light);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      height: 64px;
+      background: rgba(13,13,13,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 36px; height: 36px;
+      background: var(--gold);
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-icon span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 14px;
+      color: var(--dark);
+    }
+
+    .nav-logo-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 1px;
+      color: var(--white);
+      line-height: 1.1;
+    }
+
+    .nav-logo-text small {
+      display: block;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex; gap: 32px; list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px; font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gray);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--dark) !important;
+      padding: 8px 20px;
+      border-radius: 2px;
+      font-weight: 700 !important;
+      letter-spacing: 1px !important;
+      transition: background .2s !important;
+    }
+
+    .nav-cta:hover { background: var(--gold-light) !important; color: var(--dark) !important; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 100px 5% 60px;
+      gap: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 2; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 2px;
+      padding: 6px 14px;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hero-badge-dot {
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    .hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(48px, 6vw, 80px);
+      line-height: 0.95;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .hero-title .gold { color: var(--gold); }
+
+    .hero-subtitle {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 300;
+      font-size: clamp(20px, 2.5vw, 30px);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 24px;
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #aaa;
+      max-width: 480px;
+      margin-bottom: 36px;
+    }
+
+    .hero-tags {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-bottom: 36px;
+    }
+
+    .hero-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 2px;
+      padding: 4px 10px;
+    }
+
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--gold);
+      color: var(--dark);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px; font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background .2s, transform .15s;
+    }
+
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent;
+      color: var(--white);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px; font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 13px 28px;
+      border-radius: 2px;
+      border: 1px solid rgba(255,255,255,0.2);
+      text-decoration: none;
+      transition: border-color .2s, color .2s;
+    }
+
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* Hero visual */
+    .hero-visual {
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .hero-logo-big {
+      width: clamp(260px, 30vw, 400px);
+      height: clamp(260px, 30vw, 400px);
+      position: relative;
+    }
+
+    .logo-outer {
+      width: 100%; height: 100%;
+      position: absolute; inset: 0;
+    }
+
+    .logo-center-text {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+    }
+
+    .logo-center-text .initials {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(48px, 7vw, 80px);
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .logo-center-text .mmo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 300;
+      font-size: clamp(12px, 1.5vw, 16px);
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    .logo-float-badge {
+      position: absolute;
+      background: var(--dark2);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .badge-cpic { top: 10%; right: -10%; color: var(--gold); }
+    .badge-caba { bottom: 20%; right: -8%; color: var(--light); }
+    .badge-exp  { top: 30%; left: -12%; color: var(--gold); }
+
+    /* ── STATS ── */
+    #stats {
+      background: var(--dark3);
+      border-top: 1px solid rgba(201,168,76,0.12);
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+      padding: 40px 5%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 20px;
+      border-right: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 48px;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 90px 5%; }
+
+    .section-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(32px, 4vw, 52px);
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .section-title .accent { color: var(--gold); }
+
+    .section-desc {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #999;
+      max-width: 600px;
+    }
+
+    .section-header { margin-bottom: 56px; }
+
+    /* ── SERVICIOS ── */
+    #servicios { background: var(--dark2); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .service-card {
+      background: var(--dark3);
+      padding: 36px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: background .25s;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      height: 2px; width: 0;
+      background: var(--gold);
+      transition: width .35s;
+    }
+
+    .service-card:hover { background: var(--dark4); }
+    .service-card:hover::before { width: 100%; }
+
+    .service-icon {
+      width: 48px; height: 48px;
+      margin-bottom: 20px;
+      color: var(--gold);
+    }
+
+    .service-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #888;
+    }
+
+    .service-num {
+      position: absolute;
+      top: 20px; right: 20px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 48px;
+      color: rgba(201,168,76,0.06);
+      line-height: 1;
+    }
+
+    /* ── LEY 257 ── */
+    #ley257 {
+      background: var(--dark);
+      border-top: 1px solid rgba(201,168,76,0.1);
+    }
+
+    .ley257-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .ley257-visual {
+      background: var(--dark3);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 4px;
+      padding: 48px 40px;
+      position: relative;
+    }
+
+    .ley257-visual::before {
+      content: '257';
+      position: absolute;
+      top: -1px; left: 28px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 11px;
+      letter-spacing: 2px;
+      background: var(--gold);
+      color: var(--dark);
+      padding: 3px 10px;
+    }
+
+    .ley257-step {
+      display: flex; gap: 16px;
+      margin-bottom: 24px;
+      align-items: flex-start;
+    }
+
+    .ley257-step:last-child { margin-bottom: 0; }
+
+    .step-num {
+      width: 32px; height: 32px;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 14px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .step-info h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .step-info p { font-size: 13px; color: #777; line-height: 1.5; }
+
+    /* ── SOBRE MÍ ── */
+    #sobre { background: var(--dark2); }
+
+    .sobre-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .sobre-logo-wrap {
+      display: flex; align-items: center; justify-content: center;
+      padding: 48px;
+      background: var(--dark3);
+      border: 1px solid rgba(201,168,76,0.1);
+    }
+
+    .sobre-logo-wrap svg {
+      width: 160px; height: 160px;
+    }
+
+    .credential-list { margin-top: 28px; display: flex; flex-direction: column; gap: 16px; }
+
+    .credential-item {
+      display: flex; gap: 14px; align-items: center;
+      padding: 16px;
+      background: var(--dark3);
+      border-left: 3px solid var(--gold);
+    }
+
+    .credential-item .ci-icon {
+      width: 32px; height: 32px; flex-shrink: 0;
+      color: var(--gold);
+    }
+
+    .credential-item h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: var(--white);
+      letter-spacing: 0.5px;
+    }
+
+    .credential-item p { font-size: 12px; color: #777; }
+
+    /* ── PROCESO ── */
+    #proceso {
+      background: var(--dark);
+      border-top: 1px solid rgba(201,168,76,0.08);
+    }
+
+    .proceso-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+    }
+
+    .proceso-step {
+      background: var(--dark3);
+      padding: 36px 28px;
+      position: relative;
+    }
+
+    .proceso-step-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 60px;
+      color: rgba(201,168,76,0.12);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .proceso-step h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .proceso-step p { font-size: 13px; color: #777; line-height: 1.6; }
+
+    .proceso-step::after {
+      content: '→';
+      position: absolute;
+      top: 36px; right: -14px;
+      font-size: 20px;
+      color: rgba(201,168,76,0.3);
+      z-index: 1;
+    }
+
+    .proceso-step:last-child::after { display: none; }
+
+    /* ── CONTACTO ── */
+    #contacto {
+      background: var(--dark2);
+      border-top: 1px solid rgba(201,168,76,0.1);
+    }
+
+    .contacto-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contacto-info p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #999;
+      margin-bottom: 32px;
+    }
+
+    .contact-item {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 20px;
+      color: var(--light);
+      text-decoration: none;
+      font-size: 15px;
+      transition: color .2s;
+    }
+
+    .contact-item:hover { color: var(--gold); }
+
+    .contact-item .ci {
+      width: 40px; height: 40px;
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: var(--gold);
+    }
+
+    .contact-item .ci svg { width: 18px; height: 18px; }
+
+    /* form */
+    .contact-form {
+      background: var(--dark3);
+      border: 1px solid rgba(201,168,76,0.1);
+      padding: 40px;
+    }
+
+    .form-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      text-transform: uppercase;
+      color: var(--white);
+      letter-spacing: 1px;
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .form-group { margin-bottom: 16px; }
+
+    .form-group label {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--dark);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 2px;
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      font-size: 14px;
+      padding: 12px 14px;
+      outline: none;
+      transition: border-color .2s;
+      appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: rgba(201,168,76,0.5);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .btn-form {
+      width: 100%;
+      background: var(--gold);
+      color: var(--dark);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px; font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 16px;
+      border: none; border-radius: 2px;
+      cursor: pointer;
+      transition: background .2s;
+      margin-top: 8px;
+    }
+
+    .btn-form:hover { background: var(--gold-light); }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .form-success h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .form-success p { font-size: 14px; color: #888; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(201,168,76,0.12);
+      padding: 40px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: #555;
+    }
+
+    .footer-copy span { color: var(--gold); }
+
+    .footer-links { display: flex; gap: 24px; }
+
+    .footer-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #555;
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 200;
+      width: 60px; height: 60px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .wa-float:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.5);
+    }
+
+    .wa-float svg { width: 32px; height: 32px; color: white; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      #hero { grid-template-columns: 1fr; padding-top: 90px; }
+      .hero-visual { display: none; }
+      #stats { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .ley257-inner { grid-template-columns: 1fr; }
+      .sobre-inner { grid-template-columns: 1fr; }
+      .proceso-grid { grid-template-columns: 1fr 1fr; }
+      .proceso-step::after { display: none; }
+      .contacto-inner { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      nav .nav-links { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      #stats { grid-template-columns: 1fr 1fr; }
+      .proceso-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">
+    <div class="nav-logo-icon"><span>FD</span></div>
+    <div class="nav-logo-text">
+      Franco Durán
+      <small>Maestro Mayor de Obras</small>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#ley257">Ley 257</a></li>
+    <li><a href="#sobre">Nosotros</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      <span>Disponible para nuevos proyectos · CABA</span>
+    </div>
+    <h1 class="hero-title">
+      Franco<br/>
+      Martín<br/>
+      <span class="gold">Durán</span>
+    </h1>
+    <p class="hero-subtitle">Maestro Mayor de Obras</p>
+    <p class="hero-desc">
+      Dirección de obra, planos y habilitaciones en Ciudad de Buenos Aires.
+      Matriculado en el CPIC. Respaldo técnico y docente de la Escuela Técnica Nº30 Norberto Piñero.
+    </p>
+    <div class="hero-tags">
+      <span class="hero-tag">CPIC Matriculado</span>
+      <span class="hero-tag">Ley 257</span>
+      <span class="hero-tag">Gas Certificado</span>
+      <span class="hero-tag">Habilitaciones GCBA</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-primary">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Solicitar Presupuesto
+      </a>
+      <a href="https://wa.me/5491130414187" target="_blank" class="btn-secondary">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.556 4.122 1.526 5.855L.057 23.273a.75.75 0 0 0 .92.92l5.418-1.469A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.95 9.95 0 0 1-5.073-1.378l-.361-.214-3.741 1.015 1.015-3.741-.214-.361A9.97 9.97 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        WhatsApp Directo
+      </a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-logo-big">
+      <svg class="logo-outer" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="200,8 390,110 390,290 200,392 10,290 10,110" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="1"/>
+        <polygon points="200,30 370,120 370,280 200,370 30,280 30,120" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="1"/>
+        <polygon points="200,52 350,130 350,270 200,348 50,270 50,130" fill="rgba(201,168,76,0.03)" stroke="rgba(201,168,76,0.2)" stroke-width="1.5"/>
+        <line x1="200" y1="8" x2="200" y2="392" stroke="rgba(201,168,76,0.05)" stroke-width="1"/>
+        <line x1="10" y1="200" x2="390" y2="200" stroke="rgba(201,168,76,0.05)" stroke-width="1"/>
+      </svg>
+      <div class="logo-center-text">
+        <span class="initials">FD</span>
+        <span class="mmo">M · M · O</span>
+      </div>
+    </div>
+    <div class="logo-float-badge badge-cpic">✦ CPIC Matriculado</div>
+    <div class="logo-float-badge badge-caba">📍 CABA</div>
+    <div class="logo-float-badge badge-exp">10+ Años</div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div id="stats">
+  <div class="stat-item">
+    <div class="stat-num">10+</div>
+    <div class="stat-label">Años de Experiencia</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">CPIC</div>
+    <div class="stat-label">Matrícula Activa</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">8</div>
+    <div class="stat-label">Especialidades</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">CABA</div>
+    <div class="stat-label">Zona de Trabajo</div>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="section-header">
+    <p class="section-tag">· Servicios Profesionales ·</p>
+    <h2 class="section-title">Lo que <span class="accent">resuelvo</span></h2>
+    <p class="section-desc">Soluciones integrales en construcción y habilitaciones para propietarios, arquitectos, empresas y particulares en CABA.</p>
+  </div>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <span class="service-num">01</span>
+      <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
+        <rect x="6" y="6" width="36" height="36" rx="2"/>
+        <line x1="6" y1="20" x2="42" y2="20"/><line x1="20" y1="6" x2="20" y2="42"/>
+        <line x1="14" y1="14" x2="16" y2="14"/><line x1="14" y1="28" x2="16" y2="28"/>
+      </svg>
+      <h3>Dirección de Obra</h3>
+      <p>Conducción técnica y legal de obras de arquitectura. Control de calidad, materiales, plazos y cumplimiento normativo según el Código de Edificación de CABA.</p>
+    </div>
+
+    <div class="service-card">
+      <span class="service-num">02</span>
+      <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
+        <path d="M8 40V14l16-6 16 6v26H8z"/><line x1="20" y1="40" x2="20" y2="28"/><line x1="28" y1="40" x2="28" y2="28"/>
+        <rect x="20" y="28" width="8" height="12"/><line x1="16" y1="20" x2="32" y2="20"/>
+      </svg>
+      <h3>Planos y Legalizaciones</h3>
+      <p>Confección de planos de obra nueva, ampliaciones, regularizaciones y trámites de aprobación ante la Dirección General de Registro de Obras y Catastro (DGROC).</p>
+    </div>
+
+    <div class="service-card">
+      <span class="service-num">03</span>
+      <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
+        <path d="M6 42l8-8 6 6 16-20 6 6"/><circle cx="36" cy="16" r="8"/><path d="M32 16h8M36 12v8"/>
+      </svg>
+      <h3>Refacciones</h3>
+      <p>Remodelaciones integrales y parciales de viviendas, locales y oficinas. Coordinación de gremios, provisión de materiales y control de calidad en cada etapa.</p>
+    </div>
+
+    <div class="service-card">
+      <span class="service-num">04</span>
+      <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
+        <path d="M24 6v4M14 10l3 3M10 20h4M14 30l3-3M24 34v4M34 30l-3-3M38 20h-4M34 10l-3 3"/>
+        <circle cx="24" cy="20" r="8"/>
+        <path d="M20 36c0 4 8 4 8 0"/>
+      </svg>
+      <h3>Instalaciones Sanitarias</h3>
+      <p>Diseño y ejecución de instalaciones de agua fría, caliente y desagüe. Reparaciones, ampliaciones y certificación de instalaciones existentes.</p>
+    </div>
+
+    <div class="service-card">
+      <span class="service-num">05</span>
+      <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
+        <path d="M24 6 C14 14, 14 26, 24 34 C34 26, 34 14, 24 6z"/>
+        <line x1="24" y1="34" x2="24" y2="44"/>
+        <line x1="18" y1="44" x2="30" y2="44"/>
+        <path d="M16 20 Q24 16 32 20"/>
+      </svg>
+      <h3>Instalaciones de Gas</h3>
+      <p>Instalación, modificación y certificación de redes de gas natural. Habilitación de instalaciones ante Metrogas. Cumplimiento de normativa NAG 200 y REGLÓN.</p>
+    </div>
+
+    <div class="service-card">
+      <span class="service-num">06</span>
+      <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
+        <rect x="8" y="10" width="32" height="28" rx="2"/>
+        <line x1="16" y1="18" x2="32" y2="18"/><line x1="16" y1="24" x2="26" y2="24"/>
+        <circle cx="34" cy="32" r="4"/><path d="M34 28v4l2 2"/>
+      </svg>
+      <h3>Habilitaciones GCBA</h3>
+      <p>Gestión de habilitaciones comerciales, certificados de uso conforme, verificaciones de uso y habilitaciones de actividades ante organismos del Gobierno de CABA.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- LEY 257 -->
+<section id="ley257">
+  <div class="ley257-inner">
+    <div>
+      <p class="section-tag">· Especialidad ·</p>
+      <h2 class="section-title">Ley 257<br/><span class="accent">Fachadas</span></h2>
+      <p class="section-desc" style="margin-bottom:24px;">
+        La Ley 257 obliga a los propietarios de edificios de más de 10 años a certificar el estado de fachadas y balcones cada 10 años bajo riesgo de multas y clausura. Gestiono el proceso completo.
+      </p>
+      <p class="section-desc">
+        Inspección, informe técnico, trabajos de consolidación si fueran necesarios, y certificación final ante el GCBA — todo bajo mi firma profesional.
+      </p>
+      <div style="margin-top:32px;">
+        <a href="#contacto" class="btn-primary" style="display:inline-flex;">Consultar Certificación</a>
+      </div>
+    </div>
+    <div class="ley257-visual">
+      <div class="ley257-step">
+        <div class="step-num">1</div>
+        <div class="step-info">
+          <h4>Inspección Técnica</h4>
+          <p>Relevamiento del estado de fachada, balcones y elementos salientes del edificio.</p>
+        </div>
+      </div>
+      <div class="ley257-step">
+        <div class="step-num">2</div>
+        <div class="step-info">
+          <h4>Informe de Estado</h4>
+          <p>Elaboración del informe técnico con clasificación del riesgo y relevamiento fotográfico.</p>
+        </div>
+      </div>
+      <div class="ley257-step">
+        <div class="step-num">3</div>
+        <div class="step-info">
+          <h4>Trabajos de Puesta en Valor</h4>
+          <p>Reparación y consolidación de elementos dañados. Coordinación de trabajos verticales.</p>
+        </div>
+      </div>
+      <div class="ley257-step">
+        <div class="step-num">4</div>
+        <div class="step-info">
+          <h4>Certificación GCBA</h4>
+          <p>Presentación del certificado ante el Gobierno de CABA. Cierre del expediente.</p>
+        </div>
+      </div>
+      <div class="ley257-step">
+        <div class="step-num">5</div>
+        <div class="step-info">
+          <h4>Aviso de Obra en DGROC</h4>
+          <p>Gestión completa del trámite ante la Dirección General de Registro de Obras y Catastro.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section id="sobre">
+  <div class="sobre-inner">
+    <div>
+      <div class="sobre-logo-wrap">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="100,4 196,55 196,145 100,196 4,145 4,55" fill="none" stroke="rgba(201,168,76,0.25)" stroke-width="1.5"/>
+          <polygon points="100,24 176,65 176,135 100,176 24,135 24,65" fill="rgba(201,168,76,0.04)" stroke="rgba(201,168,76,0.15)" stroke-width="1"/>
+          <text x="100" y="108" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="900" font-size="52" fill="#c9a84c">FD</text>
+          <text x="100" y="130" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="300" font-size="12" fill="#666" letter-spacing="6">M·M·O</text>
+        </svg>
+      </div>
+    </div>
+    <div>
+      <p class="section-tag">· Sobre Mí ·</p>
+      <h2 class="section-title">Formación y<br/><span class="accent">Trayectoria</span></h2>
+      <p class="section-desc" style="margin-bottom:32px;">
+        Maestro Mayor de Obras con matrícula activa en el Consejo Profesional de Ingeniería Civil (CPIC), egresado de la Escuela Técnica Nº30 Norberto Piñero. Docente en escuela técnica del Gobierno de la Ciudad de Buenos Aires, transmitiendo oficio y rigor técnico a las nuevas generaciones.
+      </p>
+      <p class="section-desc" style="margin-bottom:36px;">
+        Mi trabajo combina el conocimiento profundo de la normativa vigente en CABA con la experiencia práctica en obra, garantizando resultados que cumplen estándares técnicos y legales.
+      </p>
+      <div class="credential-list">
+        <div class="credential-item">
+          <svg class="ci-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 32 32">
+            <rect x="4" y="6" width="24" height="20" rx="2"/>
+            <path d="M10 14h12M10 18h8"/>
+            <circle cx="16" cy="11" r="2"/>
+          </svg>
+          <div>
+            <h4>CPIC — Matrícula Activa</h4>
+            <p>Consejo Profesional de Ingeniería Civil · Ciudad de Buenos Aires</p>
+          </div>
+        </div>
+        <div class="credential-item">
+          <svg class="ci-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 32 32">
+            <path d="M16 4L4 10v12l12 6 12-6V10L16 4z"/>
+            <path d="M16 4v18M4 10l12 6 12-6"/>
+          </svg>
+          <div>
+            <h4>ET Nº30 Norberto Piñero</h4>
+            <p>Egresado · Docente de Escuela Técnica · GCBA</p>
+          </div>
+        </div>
+        <div class="credential-item">
+          <svg class="ci-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 32 32">
+            <path d="M28 20c0 4.4-5.4 8-12 8S4 24.4 4 20c0-2.4 1.6-4.6 4.2-6.2"/>
+            <path d="M16 4v12M10 8l6-4 6 4"/>
+          </svg>
+          <div>
+            <h4>Docente Técnico GCBA</h4>
+            <p>Construcción · Instalaciones · Normativa de obra</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso">
+  <div class="section-header">
+    <p class="section-tag">· Cómo Trabajo ·</p>
+    <h2 class="section-title">El <span class="accent">Proceso</span></h2>
+    <p class="section-desc">De la consulta al cierre del expediente, acompañamiento técnico en cada etapa.</p>
+  </div>
+  <div class="proceso-grid">
+    <div class="proceso-step">
+      <div class="proceso-step-num">01</div>
+      <h3>Consulta Inicial</h3>
+      <p>Analizamos tu necesidad por WhatsApp o en persona. Sin costo, sin compromiso.</p>
+    </div>
+    <div class="proceso-step">
+      <div class="proceso-step-num">02</div>
+      <h3>Relevamiento</h3>
+      <p>Visita técnica al inmueble. Diagnóstico detallado y presupuesto cerrado.</p>
+    </div>
+    <div class="proceso-step">
+      <div class="proceso-step-num">03</div>
+      <h3>Ejecución</h3>
+      <p>Inicio de obra o trámite con plazos acordados. Informes de avance periódicos.</p>
+    </div>
+    <div class="proceso-step">
+      <div class="proceso-step-num">04</div>
+      <h3>Cierre y Entrega</h3>
+      <p>Documentación final, certificados y seguimiento postventa ante organismos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="contacto-inner">
+    <div class="contacto-info">
+      <p class="section-tag">· Contacto ·</p>
+      <h2 class="section-title" style="margin-bottom:20px;">Hablemos de<br/><span class="accent">tu Proyecto</span></h2>
+      <p>Respondiendo consultas de lunes a viernes. El primer asesoramiento es sin cargo.</p>
+      <a href="tel:+5491130414187" class="contact-item">
+        <div class="ci">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.45 2 2 0 0 1 3.59 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.83a16 16 0 0 0 6.29 6.29l1.72-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </div>
+        +54 11 3041-4187
+      </a>
+      <a href="mailto:francomduran@gmail.com" class="contact-item">
+        <div class="ci">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        francomduran@gmail.com
+      </a>
+      <a href="https://wa.me/5491130414187" target="_blank" class="contact-item">
+        <div class="ci">
+          <svg fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.556 4.122 1.526 5.855L.057 23.273a.75.75 0 0 0 .92.92l5.418-1.469A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.95 9.95 0 0 1-5.073-1.378l-.361-.214-3.741 1.015 1.015-3.741-.214-.361A9.97 9.97 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+          </svg>
+        </div>
+        WhatsApp · Respuesta rápida
+      </a>
+      <div class="contact-item" style="cursor:default;">
+        <div class="ci">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        Ciudad de Buenos Aires · CABA
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <div class="form-title">Solicitar Presupuesto</div>
+      <form id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre *</label>
+            <input type="text" name="nombre" required placeholder="Tu nombre" />
+          </div>
+          <div class="form-group">
+            <label>Teléfono</label>
+            <input type="tel" name="telefono" placeholder="Tu número" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email *</label>
+          <input type="email" name="email" required placeholder="tu@email.com" />
+        </div>
+        <div class="form-group">
+          <label>Tipo de Consulta</label>
+          <select name="servicio">
+            <option value="">— Seleccioná —</option>
+            <option>Dirección de Obra</option>
+            <option>Planos y Legalizaciones</option>
+            <option>Refacciones</option>
+            <option>Instalaciones Sanitarias</option>
+            <option>Instalaciones de Gas</option>
+            <option>Habilitaciones GCBA</option>
+            <option>Ley 257 — Fachadas</option>
+            <option>Otro / Consulta General</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tu Consulta *</label>
+          <textarea name="mensaje" required placeholder="Contame de qué se trata tu proyecto o consulta..."></textarea>
+        </div>
+        <button type="submit" class="btn-form">Enviar Consulta</button>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <h3>¡Consulta recibida!</h3>
+        <p>Te respondo a la brevedad por email o WhatsApp. Gracias por contactarme.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-copy">© 2025 <span>Franco Martín Durán</span> — Maestro Mayor de Obras · CPIC · CABA</p>
+  <div class="footer-links">
+    <a href="#servicios">Servicios</a>
+    <a href="#ley257">Ley 257</a>
+    <a href="#sobre">Sobre Mí</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="wa-float" href="https://wa.me/5491130414187" target="_blank" title="WhatsApp">
+  <svg fill="currentColor" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.556 4.122 1.526 5.855L.057 23.273a.75.75 0 0 0 .92.92l5.418-1.469A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.95 9.95 0 0 1-5.073-1.378l-.361-.214-3.741 1.015 1.015-3.741-.214-.361A9.97 9.97 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    this.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
