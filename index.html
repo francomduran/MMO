@@ -770,6 +770,54 @@
 
     .wa-float svg { width: 32px; height: 32px; color: white; }
 
+    /* ── GALERÍA ── */
+    #galeria { background: var(--dark3); }
+
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 260px 260px;
+      gap: 4px;
+    }
+
+    .galeria-item {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .galeria-item:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .galeria-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: brightness(0.75) saturate(0.85);
+      transition: filter .4s, transform .5s;
+    }
+
+    .galeria-item:hover img {
+      filter: brightness(0.9) saturate(1);
+      transform: scale(1.04);
+    }
+
+    .galeria-item .galeria-label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 16px 18px 14px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.75));
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px; font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0;
+      transition: opacity .3s;
+    }
+
+    .galeria-item:hover .galeria-label { opacity: 1; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       #hero { grid-template-columns: 1fr; padding-top: 90px; }
@@ -777,6 +825,9 @@
       #stats { grid-template-columns: repeat(2, 1fr); }
       .stat-item:nth-child(2) { border-right: none; }
       .services-grid { grid-template-columns: 1fr; }
+      .galeria-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .galeria-item:first-child { grid-column: span 2; grid-row: span 1; height: 220px; }
+      .galeria-item { height: 180px; }
       .ley257-inner { grid-template-columns: 1fr; }
       .sobre-inner { grid-template-columns: 1fr; }
       .proceso-grid { grid-template-columns: 1fr 1fr; }
@@ -806,6 +857,7 @@
   </a>
   <ul class="nav-links">
     <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#galeria">Galería</a></li>
     <li><a href="#ley257">Ley 257</a></li>
     <li><a href="#sobre">Nosotros</a></li>
     <li><a href="#proceso">Proceso</a></li>
@@ -960,6 +1012,37 @@
       <p>Gestión de habilitaciones comerciales, certificados de uso conforme, verificaciones de uso y habilitaciones de actividades ante organismos del Gobierno de CABA.</p>
     </div>
 
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section id="galeria">
+  <div class="section-header">
+    <p class="section-tag">· Trabajos ·</p>
+    <h2 class="section-title">Obras y <span class="accent">Proyectos</span></h2>
+    <p class="section-desc">Dirección, refacciones e instalaciones en Ciudad de Buenos Aires.</p>
+  </div>
+  <div class="galeria-grid">
+    <div class="galeria-item">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80&fit=crop" alt="Obra en construcción" loading="lazy" />
+      <span class="galeria-label">Dirección de Obra</span>
+    </div>
+    <div class="galeria-item">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80&fit=crop" alt="Planos arquitectónicos" loading="lazy" />
+      <span class="galeria-label">Planos y Legalizaciones</span>
+    </div>
+    <div class="galeria-item">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop" alt="Refacción interior" loading="lazy" />
+      <span class="galeria-label">Refacciones</span>
+    </div>
+    <div class="galeria-item">
+      <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&q=80&fit=crop" alt="Instalación sanitaria" loading="lazy" />
+      <span class="galeria-label">Instalaciones Sanitarias</span>
+    </div>
+    <div class="galeria-item">
+      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80&fit=crop" alt="Fachada de edificio" loading="lazy" />
+      <span class="galeria-label">Ley 257 — Fachadas</span>
+    </div>
   </div>
 </section>
 
@@ -1154,7 +1237,9 @@
 
     <div class="contact-form">
       <div class="form-title">Solicitar Presupuesto</div>
-      <form id="contactForm">
+      <form id="contactForm" action="https://formspree.io/f/FORM_ID_ACÁ" method="POST">
+        <input type="hidden" name="_subject" value="Nueva consulta desde tu web — MMO Franco Durán" />
+        <input type="hidden" name="_language" value="es" />
         <div class="form-row">
           <div class="form-group">
             <label>Nombre *</label>
