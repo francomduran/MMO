@@ -945,6 +945,143 @@
 
     .faq-item.open .faq-answer { display: block; }
 
+    /* ── RESEÑAS ── */
+    #resenas { background: var(--dark2); }
+
+    .resenas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .resena-card {
+      background: var(--dark3);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 3px;
+      padding: 28px 24px;
+      position: relative;
+    }
+
+    .resena-stars {
+      color: var(--gold);
+      font-size: 16px;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .resena-text {
+      font-size: 14px;
+      line-height: 1.75;
+      color: #999;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .resena-autor {
+      display: flex; align-items: center; gap: 12px;
+    }
+
+    .resena-avatar {
+      width: 40px; height: 40px;
+      background: rgba(201,168,76,0.15);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 16px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .resena-nombre {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 15px;
+      text-transform: uppercase;
+      color: var(--white);
+      letter-spacing: 0.5px;
+    }
+
+    .resena-detalle {
+      font-size: 12px; color: #555;
+    }
+
+    .resena-quote {
+      position: absolute;
+      top: 20px; right: 20px;
+      font-size: 60px; line-height: 1;
+      color: rgba(201,168,76,0.06);
+      font-family: Georgia, serif;
+    }
+
+    .btn-google {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent;
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px; font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      border-radius: 2px;
+      text-decoration: none;
+      margin-top: 36px;
+      transition: background .2s, border-color .2s;
+      display: flex; width: fit-content;
+    }
+
+    .btn-google:hover { background: rgba(201,168,76,0.08); border-color: var(--gold); }
+
+    /* ── ANTES / DESPUÉS ── */
+    #antesdespues { background: var(--dark); }
+
+    .ad-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4px;
+    }
+
+    .ad-item { position: relative; overflow: hidden; height: 300px; }
+
+    .ad-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7) saturate(0.7);
+      transition: transform .5s;
+    }
+
+    .ad-item:hover img { transform: scale(1.04); }
+
+    .ad-label {
+      position: absolute;
+      top: 16px; left: 16px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 2px;
+    }
+
+    .ad-label.antes { background: rgba(0,0,0,0.7); color: #888; border: 1px solid #444; }
+    .ad-label.despues { background: var(--gold); color: var(--dark); }
+
+    .ad-desc {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 20px 16px 16px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+      font-size: 13px; color: #ccc; line-height: 1.5;
+    }
+
+    .ad-desc strong {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 15px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 2px;
+    }
+
     /* Hamburguesa */
     .hamburger {
       display: none;
@@ -1007,6 +1144,9 @@
       .stat-item:nth-child(2) { border-right: none; }
       .services-grid { grid-template-columns: 1fr; }
       .porque-grid { grid-template-columns: 1fr; }
+      .resenas-grid { grid-template-columns: 1fr; }
+      .ad-grid { grid-template-columns: 1fr; }
+      .ad-item { height: 220px; }
       .galeria-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
       .galeria-item:first-child { grid-column: span 2; grid-row: span 1; height: 220px; }
       .galeria-item { height: 180px; }
@@ -1158,7 +1298,7 @@
       <span class="hero-tag">Habilitaciones GCBA</span>
     </div>
     <div class="hero-actions">
-      <a href="#contacto" class="btn-primary">
+      <a href="/presupuesto" class="btn-primary">
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         Solicitar Presupuesto
       </a>
@@ -1312,6 +1452,15 @@
       <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80&fit=crop" alt="Fachada de edificio" loading="lazy" />
       <span class="galeria-label">Ley 257 — Fachadas</span>
     </div>
+    <div class="service-card">
+      <span class="service-num">07</span>
+      <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 48 48">
+        <path d="M24 4l-4 18h8L20 44l16-24h-9L34 4z"/>
+      </svg>
+      <h3>Electricidad Domiciliaria</h3>
+      <p>Instalaciones eléctricas domiciliarias, tableros, circuitos y puestas a tierra en viviendas, departamentos y locales. Verificación y certificación de instalaciones existentes. Cumplimiento del Reglamento de AEA 90364.</p>
+    </div>
+
   </div>
 </section>
 
@@ -1602,6 +1751,94 @@
       <div class="faq-answer">Trabajo en forma independiente pero cuento con una red consolidada de profesionales y gremios de confianza: albañiles, plomeros, gasistas, electricistas y pintores. Para cada obra armo el equipo según el trabajo específico, siempre supervisando personalmente los avances.</div>
     </div>
 
+  </div>
+</section>
+
+<!-- RESEÑAS -->
+<section id="resenas">
+  <div class="section-header">
+    <p class="section-tag">· Clientes ·</p>
+    <h2 class="section-title">Lo que dicen <span class="accent">mis clientes</span></h2>
+    <p class="section-desc">Testimonios reales de vecinos de CABA que confiaron su obra o trámite.</p>
+  </div>
+  <div class="resenas-grid">
+
+    <div class="resena-card">
+      <div class="resena-quote">"</div>
+      <div class="resena-stars">★★★★★</div>
+      <p class="resena-text">Me llegó la notificación de la AGC por la Ley 257 y no entendía nada. Franco me explicó todo desde el principio, vino a ver la fachada, hizo el informe y gestionó todo el trámite. En pocas semanas estaba el certificado aprobado. Sin Franco hubiera tardado meses sola.</p>
+      <div class="resena-autor">
+        <div class="resena-avatar">ML</div>
+        <div>
+          <div class="resena-nombre">María L.</div>
+          <div class="resena-detalle">Palermo · Certificación Ley 257</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="resena-card">
+      <div class="resena-quote">"</div>
+      <div class="resena-stars">★★★★★</div>
+      <p class="resena-text">Llamé para cambiar el calefón porque el anterior no tenía certificación y me pedían el papel para el seguro del consorcio. Franco vino al día siguiente, instaló el calefón nuevo, tiró el caño de salida correctamente y me dio el certificado. Prolijo, rápido y sin vueltas.</p>
+      <div class="resena-autor">
+        <div class="resena-avatar">DR</div>
+        <div>
+          <div class="resena-nombre">Diego R.</div>
+          <div class="resena-detalle">Villa Crespo · Instalación calefón</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="resena-card">
+      <div class="resena-quote">"</div>
+      <div class="resena-stars">★★★★★</div>
+      <p class="resena-text">Tenía una pérdida de agua en el baño que nadie encontraba. Habían venido dos plomeros y ninguno dio con el problema. Franco detectó que era una fisura en la columna oculta dentro de la pared, la reparó, rehízo el revestimiento y no tuve más problemas. Muy recomendable.</p>
+      <div class="resena-autor">
+        <div class="resena-avatar">AM</div>
+        <div>
+          <div class="resena-nombre">Analía M.</div>
+          <div class="resena-detalle">Caballito · Reparación pérdida de agua</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <a href="#" class="btn-google" id="btnGoogle">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+    </svg>
+    Calificame en Google
+  </a>
+</section>
+
+<!-- ANTES / DESPUÉS -->
+<section id="antesdespues">
+  <div class="section-header">
+    <p class="section-tag">· Resultados ·</p>
+    <h2 class="section-title">Antes y <span class="accent">Después</span></h2>
+    <p class="section-desc">El antes y el después habla mejor que cualquier descripción.</p>
+  </div>
+  <div class="ad-grid">
+    <div class="ad-item">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&fit=crop" alt="Antes refacción" loading="lazy" />
+      <span class="ad-label antes">Antes</span>
+      <div class="ad-desc"><strong>Baño completo · Caballito</strong>Revoque caído, humedad y cañería obsoleta</div>
+    </div>
+    <div class="ad-item">
+      <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80&fit=crop" alt="Después refacción" loading="lazy" />
+      <span class="ad-label despues">Después</span>
+      <div class="ad-desc"><strong>Baño terminado · Caballito</strong>Instalación nueva, revestimiento completo y pintura</div>
+    </div>
+    <div class="ad-item">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80&fit=crop" alt="Antes fachada" loading="lazy" />
+      <span class="ad-label antes">Antes</span>
+      <div class="ad-desc"><strong>Fachada Ley 257 · Palermo</strong>Mampostería con fisuras y riesgo de desprendimiento</div>
+    </div>
+    <div class="ad-item">
+      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80&fit=crop" alt="Después fachada" loading="lazy" />
+      <span class="ad-label despues">Después</span>
+      <div class="ad-desc"><strong>Fachada certificada · Palermo</strong>Consolidación completa y certificado AGC aprobado</div>
+    </div>
   </div>
 </section>
 
