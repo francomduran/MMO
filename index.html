@@ -846,6 +846,54 @@
 
     .wa-float svg { width: 32px; height: 32px; color: white; }
 
+    /* ── TRABAJÁ CONMIGO ── */
+    #trabaja { background: var(--dark3); }
+    .trabaja-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .trabaja-card {
+      background: var(--dark2);
+      border: 1px solid rgba(201,168,76,0.12);
+      border-top: 2px solid var(--gold);
+      padding: 32px 28px;
+    }
+    .trabaja-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 20px;
+      text-transform: uppercase; color: var(--white);
+      margin-bottom: 10px; letter-spacing: 0.5px;
+    }
+    .trabaja-card p {
+      font-size: 14px; line-height: 1.7; color: #888;
+      margin-bottom: 20px;
+    }
+    .trabaja-card ul {
+      list-style: none; margin-bottom: 24px;
+    }
+    .trabaja-card ul li {
+      font-size: 13px; color: #777;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .trabaja-card ul li::before {
+      content: '·'; color: var(--gold); font-size: 18px; line-height: 1;
+    }
+    .trabaja-icon {
+      width: 48px; height: 48px;
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .trabaja-icon svg { width: 24px; height: 24px; }
+    @media (max-width: 768px) { .trabaja-grid { grid-template-columns: 1fr; } }
+
     /* ── GALERÍA ── */
     #galeria { background: var(--dark3); }
 
@@ -1392,6 +1440,10 @@
   <div class="stat-item">
     <div class="stat-num">CABA</div>
     <div class="stat-label">Zona de Trabajo</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">+20</div>
+    <div class="stat-label">Refacciones Realizadas</div>
   </div>
 </div>
 
@@ -2010,6 +2062,65 @@
         <p>Te respondo a la brevedad por email o WhatsApp. Gracias por contactarme.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- TRABAJÁ CONMIGO -->
+<section id="trabaja">
+  <div class="section-header">
+    <p class="section-tag">· Sumate ·</p>
+    <h2 class="section-title">Trabajá <span class="accent">conmigo</span></h2>
+    <p class="section-desc">Si sos un profesional del rubro o proveedor de materiales y querés trabajar en conjunto, escribime. Siempre busco gente seria y comprometida.</p>
+  </div>
+  <div class="trabaja-grid">
+
+    <div class="trabaja-card">
+      <div class="trabaja-icon">
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
+      <h3>Obreros y Oficios</h3>
+      <p>Busco profesionales independientes de distintos oficios para trabajar en obras bajo mi dirección técnica en CABA. Trabajo constante y pago en término.</p>
+      <ul>
+        <li>Albañiles y ayudantes</li>
+        <li>Plomeros y gasistas</li>
+        <li>Electricistas</li>
+        <li>Pintores y yeseros</li>
+        <li>Carpinteros y herreros</li>
+      </ul>
+      <a href="https://wa.me/5491130414187?text=Hola%20Franco%2C%20soy%20oficial%20de%20obra%20y%20me%20interesa%20trabajar%20con%20vos.%20Te%20cuento%20mi%20oficio%3A%20" class="btn-primary" style="display:inline-flex;">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.556 4.122 1.526 5.855L.057 23.273a.75.75 0 0 0 .92.92l5.418-1.469A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.95 9.95 0 0 1-5.073-1.378l-.361-.214-3.741 1.015 1.015-3.741-.214-.361A9.97 9.97 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Contactarme
+      </a>
+    </div>
+
+    <div class="trabaja-card">
+      <div class="trabaja-icon">
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+      </div>
+      <h3>Proveedores de Materiales</h3>
+      <p>Si tenés un corralón, distribuidora o importadora de materiales de construcción y querés ofrecerme precios mayoristas, mandame tu lista de precios.</p>
+      <ul>
+        <li>Materiales de construcción</li>
+        <li>Sanitarios y griferías</li>
+        <li>Materiales eléctricos</li>
+        <li>Aberturas y carpintería</li>
+        <li>Hierro, cemento y agregados</li>
+      </ul>
+      <a href="mailto:francomduran@gmail.com?subject=Lista%20de%20precios%20proveedor&body=Hola%20Franco%2C%20soy%20proveedor%20de%20materiales%20y%20quiero%20enviarte%20nuestra%20lista%20de%20precios." class="btn-primary" style="display:inline-flex;">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Enviar lista de precios
+      </a>
+    </div>
+
   </div>
 </section>
 
