@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refacciones y Reformas · Franco Durán MMO · CABA</title>
+  <meta name="description" content="Remodelaciones de baños, cocinas, pisos y locales en CABA. Presupuesto cerrado sin sorpresas. Maestro Mayor de Obras matriculado CPIC." />
+  <meta property="og:title" content="Refacciones y Reformas en CABA · Franco Durán MMO" />
+  <meta property="og:description" content="Reformas integrales o parciales con presupuesto cerrado. Coordino todos los gremios: albañiles, plomeros, electricistas y pintores." />
+  <meta property="og:url" content="https://francoduran.com.ar/refacciones.html" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --gold: #c9a84c; --gold-light: #e4c97a; --dark: #0d0d0d; --dark2: #141414; --dark3: #1c1c1c; --gray: #888; --white: #fff; --light: #f0ece4; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Barlow', sans-serif; background: var(--dark); color: var(--light); }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 64px; background: rgba(13,13,13,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(201,168,76,0.15); }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo-icon { width: 32px; height: 32px; background: var(--gold); clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); display: flex; align-items: center; justify-content: center; }
+    .nav-logo-icon span { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 11px; color: var(--dark); }
+    .nav-logo-text { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; color: var(--white); line-height: 1.1; }
+    .nav-logo-text small { display: block; font-size: 10px; font-weight: 400; letter-spacing: 2px; color: var(--gold); }
+    .nav-back { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); text-decoration: none; transition: color .2s; }
+    .nav-back:hover { color: var(--gold); }
+
+    .hero { min-height: 55vh; display: flex; align-items: center; padding: 100px 5% 60px; background: var(--dark2); border-bottom: 1px solid rgba(201,168,76,0.1); position: relative; overflow: hidden; }
+    .hero::after { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 45%; background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&fit=crop') center/cover; opacity: 0.08; }
+    .hero-content { max-width: 620px; position: relative; z-index: 1; }
+    .hero-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .hero-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(38px, 5vw, 66px); text-transform: uppercase; color: var(--white); line-height: 0.95; margin-bottom: 20px; }
+    .hero-title span { color: var(--gold); }
+    .hero-desc { font-size: 16px; line-height: 1.7; color: #999; margin-bottom: 32px; }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--dark); font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 14px 28px; border-radius: 2px; text-decoration: none; transition: background .2s; }
+    .btn-primary:hover { background: var(--gold-light); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: var(--white); font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 13px 28px; border-radius: 2px; border: 1px solid rgba(255,255,255,0.2); text-decoration: none; transition: border-color .2s, color .2s; }
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+    section { padding: 72px 5%; }
+    .section-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .section-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(28px, 4vw, 48px); text-transform: uppercase; color: var(--white); line-height: 1; margin-bottom: 16px; }
+    .section-title span { color: var(--gold); }
+    .section-desc { font-size: 15px; line-height: 1.75; color: #999; max-width: 680px; }
+
+    #ventajas { background: var(--dark3); }
+    .ventajas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 48px; }
+    .ventaja-card { background: var(--dark2); padding: 32px 24px; border-top: 2px solid var(--gold); }
+    .ventaja-card h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; text-transform: uppercase; color: var(--white); margin-bottom: 10px; }
+    .ventaja-card p { font-size: 14px; line-height: 1.7; color: #888; }
+
+    #trabajos { background: var(--dark2); }
+    .trabajos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
+    .trabajo-item { display: flex; gap: 16px; background: var(--dark3); padding: 24px 20px; align-items: flex-start; }
+    .trabajo-icon { width: 40px; height: 40px; flex-shrink: 0; background: rgba(201,168,76,0.1); border-radius: 2px; display: flex; align-items: center; justify-content: center; color: var(--gold); }
+    .trabajo-icon svg { width: 20px; height: 20px; }
+    .trabajo-item h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; text-transform: uppercase; color: var(--white); margin-bottom: 4px; }
+    .trabajo-item p { font-size: 13px; color: #777; line-height: 1.6; }
+
+    #proceso { background: var(--dark3); }
+    .pasos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 40px; }
+    .paso { background: var(--dark2); padding: 28px 20px; }
+    .paso-num { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 48px; color: rgba(201,168,76,0.12); line-height: 1; margin-bottom: 10px; }
+    .paso h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; text-transform: uppercase; color: var(--white); margin-bottom: 8px; }
+    .paso p { font-size: 13px; color: #777; line-height: 1.6; }
+
+    #queincluye { background: var(--dark2); }
+    .incluye-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; align-items: start; }
+    .incluye-list li { display: flex; gap: 12px; margin-bottom: 16px; align-items: flex-start; font-size: 14px; color: #999; line-height: 1.6; list-style: none; }
+    .incluye-list li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .precio-box { background: var(--dark3); border: 1px solid rgba(201,168,76,0.2); padding: 36px 28px; text-align: center; }
+    .precio-box .desde { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 4px; }
+    .precio-box .precio { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 52px; color: var(--gold); line-height: 1; margin-bottom: 4px; }
+    .precio-box .nota { font-size: 12px; color: #555; margin-bottom: 20px; line-height: 1.5; }
+    .precio-box hr { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 20px 0; }
+    .precio-box ul { text-align: left; }
+    .precio-box ul li { font-size: 13px; color: #888; line-height: 1.9; list-style: none; }
+    .precio-box ul li::before { content: '· '; color: var(--gold); }
+
+    #cta { background: var(--dark); text-align: center; padding: 72px 5%; }
+    .cta-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(32px, 4vw, 52px); text-transform: uppercase; color: var(--white); margin-bottom: 14px; }
+    .cta-title span { color: var(--gold); }
+    .cta-desc { font-size: 15px; color: #888; max-width: 500px; margin: 0 auto 32px; line-height: 1.7; }
+    .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 200; width: 56px; height: 56px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.35); text-decoration: none; }
+    .wa-float svg { width: 28px; height: 28px; color: white; }
+    footer { background: var(--dark); border-top: 1px solid rgba(201,168,76,0.1); padding: 28px 5%; text-align: center; font-size: 13px; color: #444; }
+    footer span { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .ventajas-grid, .trabajos-grid, .pasos, .incluye-inner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon"><span>FMD</span></div>
+    <div class="nav-logo-text">Franco Durán <small>Maestro Mayor de Obras</small></div>
+  </a>
+  <a href="/" class="nav-back">← Volver al inicio</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-content">
+    <p class="hero-tag">· Refacciones y Reformas ·</p>
+    <h1 class="hero-title">Reformá con quien<br/><span>sabe lo que hace</span></h1>
+    <p class="hero-desc">Baños, cocinas, pisos, ampliaciones o remodelaciones completas en CABA. Presupuesto cerrado antes de empezar: lo que acordamos al inicio es exactamente lo que pagás al final. Sin costos ocultos, sin excusas.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5491130414187?text=Hola%20Franco%2C%20quiero%20hacer%20una%20refacci%C3%B3n%20o%20reforma.%20%C2%BFPuedo%20pedirte%20presupuesto%3F" class="btn-primary" target="_blank">Pedir presupuesto</a>
+      <a href="/presupuesto" class="btn-secondary">Formulario de consulta</a>
+    </div>
+  </div>
+</div>
+
+<section id="ventajas">
+  <p class="section-tag">· Por qué con un profesional ·</p>
+  <h2 class="section-title">La diferencia de trabajar <span>con un MMO</span></h2>
+  <p class="section-desc">Contratar directamente gremios sin coordinación técnica es la causa más común de obras que salen el doble de lo previsto y duran el triple.</p>
+  <div class="ventajas-grid">
+    <div class="ventaja-card">
+      <h3>Presupuesto cerrado</h3>
+      <p>Antes de empezar hacemos un relevamiento completo del espacio y entregamos un presupuesto detallado ítem por ítem. El número no cambia salvo que vos pidás cambios.</p>
+    </div>
+    <div class="ventaja-card">
+      <h3>Coordinación de gremios</h3>
+      <p>Me encargo de contratar y coordinar albañiles, plomeros, electricistas y pintores. Vos no tenés que hablar con nadie más ni estar presente todo el día.</p>
+    </div>
+    <div class="ventaja-card">
+      <h3>Materiales certificados</h3>
+      <p>Compramos con lista de materiales técnica. Nada de materiales de segunda o marcas desconocidas. Si querés elegir, te acompaño al corralón.</p>
+    </div>
+    <div class="ventaja-card">
+      <h3>Plazo comprometido</h3>
+      <p>El cronograma de obra se pacta antes de empezar. Sabés exactamente cuándo terminamos. Sin sorpresas de "falta poquito" que duran meses.</p>
+    </div>
+    <div class="ventaja-card">
+      <h3>Cumplimiento normativo</h3>
+      <p>Las instalaciones se ejecutan conforme a normativa AEA (eléctrica), NAG (gas) y código de edificación de CABA. Nada que después te genere problemas al vender o alquilar.</p>
+    </div>
+    <div class="ventaja-card">
+      <h3>Garantía de trabajo</h3>
+      <p>Los trabajos ejecutados tienen garantía. Si algo falla por causas de la ejecución, volvemos sin cargo adicional. Firmado con matrícula CPIC.</p>
+    </div>
+  </div>
+</section>
+
+<section id="trabajos">
+  <p class="section-tag">· Alcance ·</p>
+  <h2 class="section-title">Qué tipo de <span>reformas hacemos</span></h2>
+  <p class="section-desc">Desde un baño hasta una remodelación integral. Trabajamos en viviendas, departamentos, PHs, locales y oficinas en CABA.</p>
+  <div class="trabajos-grid">
+    <div class="trabajo-item">
+      <div class="trabajo-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div><h4>Baños completos</h4><p>Demolición, impermeabilización, revestimientos, artefactos sanitarios, grifería e instalaciones. Llave en mano.</p></div>
+    </div>
+    <div class="trabajo-item">
+      <div class="trabajo-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></div>
+      <div><h4>Cocinas y lavanderías</h4><p>Muebles, mesadas, bachas, revestimientos y ajuste de instalaciones de agua, gas y electricidad.</p></div>
+    </div>
+    <div class="trabajo-item">
+      <div class="trabajo-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M2 12h20M12 2v20"/></svg></div>
+      <div><h4>Pisos y revestimientos</h4><p>Porcellanato, cerámico, madera, microcemento y vinílico. Preparación de base y colocación profesional.</p></div>
+    </div>
+    <div class="trabajo-item">
+      <div class="trabajo-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h16M9 9v11"/></svg></div>
+      <div><h4>Ampliaciones y tabiques</h4><p>Divisiones en steel frame, durlock o mampostería. Ampliaciones con los permisos correspondientes.</p></div>
+    </div>
+    <div class="trabajo-item">
+      <div class="trabajo-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+      <div><h4>Remodelaciones integrales</h4><p>Proyecto completo desde el diseño hasta la entrega. Incluye coordinación de todos los gremios y materiales.</p></div>
+    </div>
+    <div class="trabajo-item">
+      <div class="trabajo-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div>
+      <div><h4>Locales comerciales</h4><p>Refacciones de locales, consultorios y oficinas. Adaptaciones para cumplir requisitos de habilitación GCBA.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="proceso">
+  <p class="section-tag">· Cómo trabajamos ·</p>
+  <h2 class="section-title">El proceso en <span>4 pasos</span></h2>
+  <div class="pasos">
+    <div class="paso">
+      <div class="paso-num">01</div>
+      <h3>Relevamiento</h3>
+      <p>Visito el espacio, tomo medidas y escucho qué querés lograr. Sin cargo y sin compromiso.</p>
+    </div>
+    <div class="paso">
+      <div class="paso-num">02</div>
+      <h3>Presupuesto cerrado</h3>
+      <p>En 48 a 72hs te mando el presupuesto detallado ítem por ítem con materiales y mano de obra. Sin letra chica.</p>
+    </div>
+    <div class="paso">
+      <div class="paso-num">03</div>
+      <h3>Ejecución</h3>
+      <p>Coordino todos los gremios y supervisamos el avance. Te mando fotos diarias del progreso.</p>
+    </div>
+    <div class="paso">
+      <div class="paso-num">04</div>
+      <h3>Entrega y garantía</h3>
+      <p>Recorremos juntos el trabajo terminado. Garantía sobre lo ejecutado con respaldo de matrícula CPIC.</p>
+    </div>
+  </div>
+</section>
+
+<section id="queincluye">
+  <p class="section-tag">· Presupuesto ·</p>
+  <h2 class="section-title">Qué incluye el <span>presupuesto</span></h2>
+  <div class="incluye-inner">
+    <div>
+      <ul class="incluye-list">
+        <li>Relevamiento técnico del espacio sin cargo</li>
+        <li>Presupuesto detallado con materiales y mano de obra por separado</li>
+        <li>Cronograma de obra con fechas de inicio y entrega</li>
+        <li>Coordinación completa de gremios — vos no tenés que gestionar nada</li>
+        <li>Supervisión técnica durante toda la ejecución</li>
+        <li>Informe fotográfico del avance</li>
+        <li>Garantía sobre trabajos ejecutados</li>
+        <li>Firmado con matrícula CPIC — respaldo profesional</li>
+      </ul>
+    </div>
+    <div class="precio-box">
+      <div class="desde">Presupuesto</div>
+      <div class="precio">Sin cargo</div>
+      <div class="nota">El relevamiento y el presupuesto son gratis.<br/>El costo varía según el trabajo a realizar.</div>
+      <hr/>
+      <ul>
+        <li>Baños desde $800.000</li>
+        <li>Cocinas desde $600.000</li>
+        <li>Pisos desde $300.000</li>
+        <li>Remodelaciones integrales a consultar</li>
+        <li>Locales comerciales a consultar</li>
+      </ul>
+      <br/>
+      <a href="https://wa.me/5491130414187?text=Hola%20Franco%2C%20quiero%20pedir%20presupuesto%20para%20una%20refacci%C3%B3n." class="btn-primary" target="_blank" style="justify-content:center;">Pedir presupuesto gratis</a>
+    </div>
+  </div>
+</section>
+
+<section id="cta" style="background: var(--dark2);">
+  <h2 class="cta-title">¿Querés reformar<br/><span>tu espacio?</span></h2>
+  <p class="cta-desc">Primera consulta sin cargo. Te digo qué se puede hacer, cuánto cuesta y cuánto tarda — antes de comprometerte con nada.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/5491130414187?text=Hola%20Franco%2C%20quiero%20hacer%20una%20refacci%C3%B3n%20o%20reforma.%20%C2%BFPuedo%20pedirte%20presupuesto%3F" class="btn-primary" target="_blank">Consultar por WhatsApp</a>
+    <a href="/presupuesto" class="btn-secondary">Formulario de presupuesto</a>
+  </div>
+</section>
+
+<footer>© 2026 <span>Franco Martín Durán</span> — Maestro Mayor de Obras · CPIC · CABA · <a href="/" style="color:#555;text-decoration:none;">francoduran.com.ar</a></footer>
+
+<a class="wa-float" href="https://wa.me/5491130414187?text=Hola%20Franco%2C%20quiero%20hacer%20una%20refacci%C3%B3n%20o%20reforma.%20%C2%BFPuedo%20pedirte%20presupuesto%3F" target="_blank">
+  <svg fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.556 4.122 1.526 5.855L.057 23.273a.75.75 0 0 0 .92.92l5.418-1.469A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.95 9.95 0 0 1-5.073-1.378l-.361-.214-3.741 1.015 1.015-3.741-.214-.361A9.97 9.97 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+</body>
+</html>

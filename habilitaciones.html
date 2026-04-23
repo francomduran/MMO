@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Habilitaciones GCBA · Franco Durán MMO · CABA</title>
+  <meta name="description" content="Gestión de habilitaciones comerciales en CABA. Locales, consultorios, depósitos y talleres. Maestro Mayor de Obras matriculado CPIC." />
+  <meta property="og:title" content="Habilitaciones GCBA en CABA · Franco Durán MMO" />
+  <meta property="og:description" content="Habilitaciones comerciales, certificados de uso conforme y APH. Me encargo de todo el trámite ante el GCBA hasta la habilitación aprobada." />
+  <meta property="og:url" content="https://francoduran.com.ar/habilitaciones.html" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --gold: #c9a84c; --gold-light: #e4c97a; --dark: #0d0d0d; --dark2: #141414; --dark3: #1c1c1c; --gray: #888; --white: #fff; --light: #f0ece4; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Barlow', sans-serif; background: var(--dark); color: var(--light); }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 64px; background: rgba(13,13,13,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(201,168,76,0.15); }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo-icon { width: 32px; height: 32px; background: var(--gold); clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); display: flex; align-items: center; justify-content: center; }
+    .nav-logo-icon span { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 11px; color: var(--dark); }
+    .nav-logo-text { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; color: var(--white); line-height: 1.1; }
+    .nav-logo-text small { display: block; font-size: 10px; font-weight: 400; letter-spacing: 2px; color: var(--gold); }
+    .nav-back { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); text-decoration: none; transition: color .2s; }
+    .nav-back:hover { color: var(--gold); }
+
+    .hero { min-height: 55vh; display: flex; align-items: center; padding: 100px 5% 60px; background: var(--dark2); border-bottom: 1px solid rgba(201,168,76,0.1); position: relative; overflow: hidden; }
+    .hero::after { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 45%; background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&fit=crop') center/cover; opacity: 0.08; }
+    .hero-content { max-width: 620px; position: relative; z-index: 1; }
+    .hero-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .hero-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(38px, 5vw, 66px); text-transform: uppercase; color: var(--white); line-height: 0.95; margin-bottom: 20px; }
+    .hero-title span { color: var(--gold); }
+    .hero-desc { font-size: 16px; line-height: 1.7; color: #999; margin-bottom: 32px; }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--dark); font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 14px 28px; border-radius: 2px; text-decoration: none; transition: background .2s; }
+    .btn-primary:hover { background: var(--gold-light); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: var(--white); font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 13px 28px; border-radius: 2px; border: 1px solid rgba(255,255,255,0.2); text-decoration: none; transition: border-color .2s, color .2s; }
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+    section { padding: 72px 5%; }
+    .section-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .section-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(28px, 4vw, 48px); text-transform: uppercase; color: var(--white); line-height: 1; margin-bottom: 16px; }
+    .section-title span { color: var(--gold); }
+    .section-desc { font-size: 15px; line-height: 1.75; color: #999; max-width: 680px; }
+
+    #porque { background: var(--dark3); }
+    .porque-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 48px; }
+    .porque-card { background: var(--dark2); padding: 32px 24px; border-top: 2px solid var(--gold); }
+    .porque-card h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; text-transform: uppercase; color: var(--white); margin-bottom: 10px; }
+    .porque-card p { font-size: 14px; line-height: 1.7; color: #888; }
+
+    #tipos { background: var(--dark2); }
+    .tipos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
+    .tipo-item { display: flex; gap: 16px; background: var(--dark3); padding: 24px 20px; align-items: flex-start; }
+    .tipo-icon { width: 40px; height: 40px; flex-shrink: 0; background: rgba(201,168,76,0.1); border-radius: 2px; display: flex; align-items: center; justify-content: center; color: var(--gold); }
+    .tipo-icon svg { width: 20px; height: 20px; }
+    .tipo-item h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; text-transform: uppercase; color: var(--white); margin-bottom: 4px; }
+    .tipo-item p { font-size: 13px; color: #777; line-height: 1.6; }
+
+    #proceso { background: var(--dark3); }
+    .pasos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 40px; }
+    .paso { background: var(--dark2); padding: 28px 20px; }
+    .paso-num { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 48px; color: rgba(201,168,76,0.12); line-height: 1; margin-bottom: 10px; }
+    .paso h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; text-transform: uppercase; color: var(--white); margin-bottom: 8px; }
+    .paso p { font-size: 13px; color: #777; line-height: 1.6; }
+
+    #queincluye { background: var(--dark2); }
+    .incluye-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; align-items: start; }
+    .incluye-list li { display: flex; gap: 12px; margin-bottom: 16px; align-items: flex-start; font-size: 14px; color: #999; line-height: 1.6; list-style: none; }
+    .incluye-list li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .precio-box { background: var(--dark3); border: 1px solid rgba(201,168,76,0.2); padding: 36px 28px; text-align: center; }
+    .precio-box .desde { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 4px; }
+    .precio-box .precio { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 52px; color: var(--gold); line-height: 1; margin-bottom: 4px; }
+    .precio-box .nota { font-size: 12px; color: #555; margin-bottom: 20px; line-height: 1.5; }
+    .precio-box hr { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 20px 0; }
+    .precio-box ul { text-align: left; }
+    .precio-box ul li { font-size: 13px; color: #888; line-height: 1.9; list-style: none; }
+    .precio-box ul li::before { content: '· '; color: var(--gold); }
+
+    #cta { background: var(--dark); text-align: center; padding: 72px 5%; }
+    .cta-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(32px, 4vw, 52px); text-transform: uppercase; color: var(--white); margin-bottom: 14px; }
+    .cta-title span { color: var(--gold); }
+    .cta-desc { font-size: 15px; color: #888; max-width: 500px; margin: 0 auto 32px; line-height: 1.7; }
+    .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 200; width: 56px; height: 56px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.35); text-decoration: none; }
+    .wa-float svg { width: 28px; height: 28px; color: white; }
+    footer { background: var(--dark); border-top: 1px solid rgba(201,168,76,0.1); padding: 28px 5%; text-align: center; font-size: 13px; color: #444; }
+    footer span { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .porque-grid, .tipos-grid, .pasos, .incluye-inner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon"><span>FMD</span></div>
+    <div class="nav-logo-text">Franco Durán <small>Maestro Mayor de Obras</small></div>
+  </a>
+  <a href="/" class="nav-back">← Volver al inicio</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-content">
+    <p class="hero-tag">· Habilitaciones GCBA ·</p>
+    <h1 class="hero-title">Habilitá tu local<br/><span>sin vueltas</span></h1>
+    <p class="hero-desc">La habilitación comercial en CABA es uno de los trámites más complejos y demorados si no se sabe cómo hacerlo. Me encargo de todo: desde el relevamiento técnico hasta la habilitación aprobada. Vos abrís el negocio, yo resuelvo el papel.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5491130414187?text=Hola%20Franco%2C%20necesito%20habilitar%20un%20local%20en%20CABA.%20%C2%BFPuedo%20consultarte%3F" class="btn-primary" target="_blank">Consultar ahora</a>
+      <a href="/presupuesto" class="btn-secondary">Solicitar presupuesto</a>
+    </div>
+  </div>
+</div>
+
+<section id="porque">
+  <p class="section-tag">· Por qué es complejo ·</p>
+  <h2 class="section-title">Los obstáculos más comunes<br/><span>en una habilitación</span></h2>
+  <p class="section-desc">Habilitar un local en CABA involucra múltiples organismos, plazos y documentación técnica. Sin experiencia, el trámite puede demorar meses o fallar por errores evitables.</p>
+  <div class="porque-grid">
+    <div class="porque-card">
+      <h3>Usos del suelo incompatibles</h3>
+      <p>No todos los locales pueden tener cualquier tipo de actividad. El Código de Planeamiento Urbano define qué rubros se permiten en cada zona. Muchos trámites fallan en este punto inicial.</p>
+    </div>
+    <div class="porque-card">
+      <h3>Documentación técnica compleja</h3>
+      <p>Planos de habilitación, memorias descriptivas, certificados de instalaciones, APH (verificación ambiental). Cada documento tiene formato y contenido requerido por el GCBA.</p>
+    </div>
+    <div class="porque-card">
+      <h3>Plazos y rechazos</h3>
+      <p>Una presentación incompleta o con errores se rechaza y hay que empezar de nuevo. Sin conocer los requisitos exactos, los tiempos se multiplican.</p>
+    </div>
+    <div class="porque-card">
+      <h3>Coordinación de inspecciones</h3>
+      <p>El GCBA puede requerir inspecciones de Bomberos, Defensa Civil, AGC y otras dependencias. Coordinar todo y estar disponible en las fechas es parte del trabajo.</p>
+    </div>
+    <div class="porque-card">
+      <h3>Adecuación del local</h3>
+      <p>Muchas veces el local necesita adecuaciones físicas antes de ser habilitado: sanitarios, salida de emergencia, ventilación, rampas. Puedo planificar y ejecutar esas obras también.</p>
+    </div>
+    <div class="porque-card">
+      <h3>Transferencias y cambios de rubro</h3>
+      <p>Si el local ya tenía habilitación de otro rubro, la transferencia tiene su propio proceso. No es automática y puede requerir nuevos planos y visitas.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tipos">
+  <p class="section-tag">· Rubros ·</p>
+  <h2 class="section-title">Tipos de <span>habilitación que gestiono</span></h2>
+  <p class="section-desc">Experiencia en distintos tipos de comercios y actividades en CABA.</p>
+  <div class="tipos-grid">
+    <div class="tipo-item">
+      <div class="tipo-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></div>
+      <div><h4>Gastronómicos</h4><p>Restaurantes, bares, cafeterías, rotiserías, delivery. Incluye coordinación con Bromatología y verificación de instalaciones de gas y extracción.</p></div>
+    </div>
+    <div class="tipo-item">
+      <div class="tipo-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div>
+      <div><h4>Comercios minoristas</h4><p>Indumentaria, ferreterías, dietéticas, perfumerías, bazares. Habilitación por uso conforme al Código de Planeamiento.</p></div>
+    </div>
+    <div class="tipo-item">
+      <div class="tipo-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+      <div><h4>Salud y profesionales</h4><p>Consultorios médicos, odontológicos, kinesiología, psicología. Coordinación con el Ministerio de Salud CABA cuando corresponde.</p></div>
+    </div>
+    <div class="tipo-item">
+      <div class="tipo-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+      <div><h4>Oficinas y estudios</h4><p>Estudios contables, legales, de diseño, inmobiliarias. Habilitación de actividades de servicio sin atención masiva de público.</p></div>
+    </div>
+    <div class="tipo-item">
+      <div class="tipo-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+      <div><h4>Depósitos y logística</h4><p>Depósitos, galpones, centros de distribución. Verificación de carga estructural, salidas de emergencia y cumplimiento de Bomberos.</p></div>
+    </div>
+    <div class="tipo-item">
+      <div class="tipo-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg></div>
+      <div><h4>Talleres y servicios técnicos</h4><p>Talleres mecánicos, electricistas, plomeros, carpinterías. Requieren verificación de impacto ambiental y condiciones especiales.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="proceso">
+  <p class="section-tag">· Cómo funciona ·</p>
+  <h2 class="section-title">El proceso en <span>4 pasos</span></h2>
+  <div class="pasos">
+    <div class="paso">
+      <div class="paso-num">01</div>
+      <h3>Verificación previa</h3>
+      <p>Relevamos el local y verificamos que el rubro sea compatible con el uso del suelo en esa dirección. Sin esto, todo lo demás no sirve.</p>
+    </div>
+    <div class="paso">
+      <div class="paso-num">02</div>
+      <h3>Documentación técnica</h3>
+      <p>Confecciono los planos de habilitación, memorias descriptivas y certificados de instalaciones requeridos por el GCBA para el rubro específico.</p>
+    </div>
+    <div class="paso">
+      <div class="paso-num">03</div>
+      <h3>Presentación y seguimiento</h3>
+      <p>Presento la documentación ante el GCBA y hago el seguimiento del expediente. Coordino inspecciones y respondo observaciones.</p>
+    </div>
+    <div class="paso">
+      <div class="paso-num">04</div>
+      <h3>Habilitación aprobada</h3>
+      <p>Una vez aprobada, te entrego la constancia de habilitación. Podés abrir el negocio con toda la documentación en regla.</p>
+    </div>
+  </div>
+</section>
+
+<section id="queincluye">
+  <p class="section-tag">· Entregable ·</p>
+  <h2 class="section-title">Qué incluye el <span>servicio</span></h2>
+  <div class="incluye-inner">
+    <div>
+      <ul class="incluye-list">
+        <li>Verificación de uso del suelo compatible con el rubro</li>
+        <li>Relevamiento técnico del local</li>
+        <li>Planos de habilitación conforme al GCBA</li>
+        <li>Memoria descriptiva del local y la actividad</li>
+        <li>Certificados de instalaciones (eléctrica, gas, sanitaria)</li>
+        <li>Presentación y seguimiento del expediente</li>
+        <li>Coordinación de inspecciones de Bomberos y AGC</li>
+        <li>Respuesta a observaciones técnicas del GCBA</li>
+        <li>Constancia de habilitación aprobada</li>
+        <li>Firmado con matrícula CPIC</li>
+      </ul>
+    </div>
+    <div class="precio-box">
+      <div class="desde">Honorarios</div>
+      <div class="precio">A consultar</div>
+      <div class="nota">El costo depende del tipo de rubro y<br/>el tamaño del local. Consulta sin cargo.</div>
+      <hr/>
+      <ul>
+        <li>Consulta de viabilidad sin cargo</li>
+        <li>Tasas GCBA incluidas en presupuesto</li>
+        <li>Plazos variables según expediente</li>
+        <li>Habilitación definitiva o condicional</li>
+        <li>Transferencia de habilitaciones existentes</li>
+      </ul>
+      <br/>
+      <a href="https://wa.me/5491130414187?text=Hola%20Franco%2C%20quiero%20habilitar%20un%20local%20en%20CABA.%20El%20rubro%20es%3A%20" class="btn-primary" target="_blank" style="justify-content:center;">Consultar precio</a>
+    </div>
+  </div>
+</section>
+
+<section id="cta" style="background: var(--dark2);">
+  <h2 class="cta-title">¿Querés abrir<br/><span>tu negocio en CABA?</span></h2>
+  <p class="cta-desc">Primero verificamos si el local y el rubro son viables. Es gratis y te ahorra meses de trámites fallidos. Consultame antes de firmar el contrato de alquiler.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/5491130414187?text=Hola%20Franco%2C%20necesito%20habilitar%20un%20local%20en%20CABA.%20%C2%BFPuedo%20consultarte%3F" class="btn-primary" target="_blank">Consultar por WhatsApp</a>
+    <a href="/presupuesto" class="btn-secondary">Formulario de presupuesto</a>
+  </div>
+</section>
+
+<footer>© 2026 <span>Franco Martín Durán</span> — Maestro Mayor de Obras · CPIC · CABA · <a href="/" style="color:#555;text-decoration:none;">francoduran.com.ar</a></footer>
+
+<a class="wa-float" href="https://wa.me/5491130414187?text=Hola%20Franco%2C%20necesito%20habilitar%20un%20local%20en%20CABA.%20%C2%BFPuedo%20consultarte%3F" target="_blank">
+  <svg fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.556 4.122 1.526 5.855L.057 23.273a.75.75 0 0 0 .92.92l5.418-1.469A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.95 9.95 0 0 1-5.073-1.378l-.361-.214-3.741 1.015 1.015-3.741-.214-.361A9.97 9.97 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+</body>
+</html>
