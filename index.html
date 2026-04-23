@@ -1039,72 +1039,113 @@
 
     .faq-item.open .faq-answer { display: block; }
 
-    /* ── RESEÑAS ── */
+    /* ── RESEÑAS CARRUSEL ── */
     #resenas { background: var(--dark2); }
 
-    .resenas-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+    .resenas-slider-wrap {
+      position: relative;
+      margin-top: 48px;
+      overflow: hidden;
+    }
+
+    .resenas-track {
+      display: flex;
+      transition: transform .6s cubic-bezier(.4,0,.2,1);
     }
 
     .resena-card {
       background: var(--dark3);
       border: 1px solid rgba(255,255,255,0.05);
       border-radius: 3px;
-      padding: 28px 24px;
+      padding: 36px 32px;
       position: relative;
+      min-width: 100%;
+      box-sizing: border-box;
     }
 
     .resena-stars {
       color: var(--gold);
-      font-size: 16px;
-      letter-spacing: 2px;
-      margin-bottom: 14px;
+      font-size: 18px;
+      letter-spacing: 3px;
+      margin-bottom: 18px;
     }
 
     .resena-text {
-      font-size: 14px;
-      line-height: 1.75;
+      font-size: 16px;
+      line-height: 1.8;
       color: #999;
-      margin-bottom: 20px;
+      margin-bottom: 28px;
       font-style: italic;
+      max-width: 780px;
     }
 
     .resena-autor {
-      display: flex; align-items: center; gap: 12px;
+      display: flex; align-items: center; gap: 14px;
     }
 
     .resena-avatar {
-      width: 40px; height: 40px;
+      width: 48px; height: 48px;
       background: rgba(201,168,76,0.15);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 900; font-size: 16px;
+      font-weight: 900; font-size: 18px;
       color: var(--gold);
       flex-shrink: 0;
     }
 
     .resena-nombre {
       font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700; font-size: 15px;
+      font-weight: 700; font-size: 16px;
       text-transform: uppercase;
       color: var(--white);
       letter-spacing: 0.5px;
     }
 
-    .resena-detalle {
-      font-size: 12px; color: #555;
-    }
+    .resena-detalle { font-size: 12px; color: #555; margin-top: 2px; }
 
     .resena-quote {
       position: absolute;
-      top: 20px; right: 20px;
-      font-size: 60px; line-height: 1;
-      color: rgba(201,168,76,0.06);
+      top: 24px; right: 28px;
+      font-size: 80px; line-height: 1;
+      color: rgba(201,168,76,0.05);
       font-family: Georgia, serif;
     }
+
+    .resenas-nav {
+      display: flex; justify-content: center; gap: 10px;
+      margin-top: 28px;
+    }
+
+    .resenas-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.2);
+      border: none; cursor: pointer;
+      padding: 0; transition: background .3s, transform .3s;
+    }
+
+    .resenas-dot.active {
+      background: var(--gold);
+      transform: scale(1.3);
+    }
+
+    .resenas-arrows {
+      display: flex; justify-content: flex-end; gap: 8px;
+      margin-top: 16px;
+    }
+
+    .resenas-arrow {
+      width: 40px; height: 40px;
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 2px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); transition: background .2s;
+    }
+
+    .resenas-arrow:hover { background: rgba(201,168,76,0.15); }
+    .resenas-arrow svg { width: 16px; height: 16px; }
 
     .btn-google {
       display: inline-flex; align-items: center; gap: 10px;
@@ -1894,47 +1935,84 @@
     <h2 class="section-title">Lo que dicen <span class="accent">mis clientes</span></h2>
     <p class="section-desc">Testimonios reales de vecinos de CABA que confiaron su obra o trámite.</p>
   </div>
-  <div class="resenas-grid">
+  <div class="resenas-slider-wrap">
+    <div class="resenas-track" id="resenasTrack">
 
-    <div class="resena-card">
-      <div class="resena-quote">"</div>
-      <div class="resena-stars">★★★★★</div>
-      <p class="resena-text">Me llegó la notificación de la AGC por la Ley 257 y no entendía nada. Franco me explicó todo desde el principio, vino a ver la fachada, hizo el informe y gestionó todo el trámite. En pocas semanas estaba el certificado aprobado. Sin Franco hubiera tardado meses sola.</p>
-      <div class="resena-autor">
-        <div class="resena-avatar">ML</div>
-        <div>
-          <div class="resena-nombre">María L.</div>
-          <div class="resena-detalle">Palermo · Certificación Ley 257</div>
+      <div class="resena-card">
+        <div class="resena-quote">"</div>
+        <div class="resena-stars">★★★★★</div>
+        <p class="resena-text">Me llegó la notificación de la AGC por la Ley 257 y no entendía nada. Franco me explicó todo desde el principio, vino a ver la fachada, hizo el informe y gestionó todo el trámite. En pocas semanas estaba el certificado aprobado. Sin Franco hubiera tardado meses sola.</p>
+        <div class="resena-autor">
+          <div class="resena-avatar">ML</div>
+          <div>
+            <div class="resena-nombre">María L.</div>
+            <div class="resena-detalle">Palermo · Certificación Ley 257</div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="resena-card">
-      <div class="resena-quote">"</div>
-      <div class="resena-stars">★★★★★</div>
-      <p class="resena-text">Llamé para cambiar el calefón porque el anterior no tenía certificación y me pedían el papel para el seguro del consorcio. Franco vino al día siguiente, instaló el calefón nuevo, tiró el caño de salida correctamente y me dio el certificado. Prolijo, rápido y sin vueltas.</p>
-      <div class="resena-autor">
-        <div class="resena-avatar">DR</div>
-        <div>
-          <div class="resena-nombre">Diego R.</div>
-          <div class="resena-detalle">Villa Crespo · Instalación calefón</div>
+      <div class="resena-card">
+        <div class="resena-quote">"</div>
+        <div class="resena-stars">★★★★★</div>
+        <p class="resena-text">Llamé para cambiar el calefón porque el anterior no tenía certificación y me pedían el papel para el seguro del consorcio. Franco vino al día siguiente, instaló el calefón nuevo, tiró el caño de salida correctamente y me dio el certificado. Prolijo, rápido y sin vueltas.</p>
+        <div class="resena-autor">
+          <div class="resena-avatar">DR</div>
+          <div>
+            <div class="resena-nombre">Diego R.</div>
+            <div class="resena-detalle">Villa Crespo · Instalación calefón</div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="resena-card">
-      <div class="resena-quote">"</div>
-      <div class="resena-stars">★★★★★</div>
-      <p class="resena-text">Tenía una pérdida de agua en el baño que nadie encontraba. Habían venido dos plomeros y ninguno dio con el problema. Franco detectó que era una fisura en la columna oculta dentro de la pared, la reparó, rehízo el revestimiento y no tuve más problemas. Muy recomendable.</p>
-      <div class="resena-autor">
-        <div class="resena-avatar">AM</div>
-        <div>
-          <div class="resena-nombre">Analía M.</div>
-          <div class="resena-detalle">Caballito · Reparación pérdida de agua</div>
+      <div class="resena-card">
+        <div class="resena-quote">"</div>
+        <div class="resena-stars">★★★★★</div>
+        <p class="resena-text">Tenía una pérdida de agua en el baño que nadie encontraba. Habían venido dos plomeros y ninguno dio con el problema. Franco detectó que era una fisura en la columna oculta dentro de la pared, la reparó, rehízo el revestimiento y no tuve más problemas. Muy recomendable.</p>
+        <div class="resena-autor">
+          <div class="resena-avatar">AM</div>
+          <div>
+            <div class="resena-nombre">Analía M.</div>
+            <div class="resena-detalle">Caballito · Reparación pérdida de agua</div>
+          </div>
         </div>
       </div>
-    </div>
 
+      <div class="resena-card">
+        <div class="resena-quote">"</div>
+        <div class="resena-stars">★★★★★</div>
+        <p class="resena-text">Necesitaba habilitar un local gastronómico en Almagro y no sabía por dónde empezar. Franco me guió en todo el trámite ante el GCBA, me ayudó a adecuar el espacio a la normativa y en dos meses tuve la habilitación aprobada. Sin él no lo hubiera logrado tan rápido.</p>
+        <div class="resena-autor">
+          <div class="resena-avatar">GS</div>
+          <div>
+            <div class="resena-nombre">Gastón S.</div>
+            <div class="resena-detalle">Almagro · Habilitación local gastronómico</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="resena-card">
+        <div class="resena-quote">"</div>
+        <div class="resena-stars">★★★★★</div>
+        <p class="resena-text">Compramos un departamento en Flores y antes de firmar le pedimos a Franco que lo inspeccione. Encontró humedad oculta en la medianera y el tablero eléctrico fuera de norma. Con ese informe negociamos el precio y el vendedor hizo las reparaciones. Valió cada peso.</p>
+        <div class="resena-autor">
+          <div class="resena-avatar">LV</div>
+          <div>
+            <div class="resena-nombre">Laura V.</div>
+            <div class="resena-detalle">Flores · Inspección previa a compra</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="resenas-nav" id="resenasNav"></div>
+    <div class="resenas-arrows">
+      <button class="resenas-arrow" id="resenaPrev" aria-label="Anterior">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="resenas-arrow" id="resenaNext" aria-label="Siguiente">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
   </div>
   <a href="https://g.page/r/CdKOm5Tche5JEAE/review" class="btn-google" id="btnGoogle" target="_blank">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -2197,6 +2275,36 @@
       }
     });
   });
+
+  // ── CARRUSEL RESEÑAS ──
+  const track = document.getElementById('resenasTrack');
+  const nav = document.getElementById('resenasNav');
+  const cards = track ? track.querySelectorAll('.resena-card') : [];
+  let current = 0;
+  let timer;
+
+  if (cards.length) {
+    cards.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'resenas-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goTo(i));
+      nav.appendChild(dot);
+    });
+
+    function goTo(n) {
+      current = (n + cards.length) % cards.length;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      nav.querySelectorAll('.resenas-dot').forEach((d, i) =>
+        d.classList.toggle('active', i === current));
+      clearInterval(timer);
+      timer = setInterval(() => goTo(current + 1), 5000);
+    }
+
+    document.getElementById('resenaPrev').addEventListener('click', () => goTo(current - 1));
+    document.getElementById('resenaNext').addEventListener('click', () => goTo(current + 1));
+
+    timer = setInterval(() => goTo(current + 1), 5000);
+  }
 </script>
 
 </body>
