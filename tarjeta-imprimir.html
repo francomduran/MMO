@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tarjeta Profesional para Imprimir — Franco Durán MMO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --gold: #c9a84c; --dark: #0d0d0d; --dark2: #141414; --dark3: #1c1c1c; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: #e0dcd4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      gap: 32px;
+    }
+
+    h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: #777;
+    }
+
+    .instrucciones {
+      background: #fff; border: 1px solid #ccc; border-radius: 4px;
+      padding: 16px 20px; font-size: 13px; color: #555; line-height: 1.7;
+      max-width: 700px; width: 100%;
+    }
+
+    .instrucciones strong { color: #333; }
+
+    .label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+      color: #999; align-self: flex-start;
+    }
+
+    /* ── TARJETA 85mm × 55mm ── */
+    .tarjeta {
+      width: 85mm;
+      height: 55mm;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 6px 28px rgba(0,0,0,0.35);
+    }
+
+    /* FRENTE */
+    .frente {
+      background: var(--dark2);
+    }
+
+    .frente::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px);
+      background-size: 7mm 7mm;
+    }
+
+    .frente::after {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 1.5px; background: var(--gold);
+    }
+
+    .frente-inner {
+      position: relative; z-index: 1;
+      padding: 5.5mm 6mm;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .f-top { display: flex; align-items: center; gap: 4mm; }
+
+    .f-logo svg { width: 13mm; height: 13mm; }
+
+    .f-nombre {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 15pt;
+      text-transform: uppercase; color: #fff;
+      line-height: 1; letter-spacing: 0.3px;
+    }
+
+    .f-titulo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 6.5pt; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--gold);
+      margin-top: 1.2mm;
+    }
+
+    .f-divider {
+      height: 1px; background: rgba(201,168,76,0.2);
+      margin: 0;
+    }
+
+    .f-contacto { display: flex; flex-direction: column; gap: 1mm; }
+
+    .f-row {
+      font-size: 6.5pt; color: #aaa;
+      display: flex; align-items: center; gap: 1.8mm;
+      font-family: 'Barlow', sans-serif;
+    }
+
+    .f-row b { color: var(--gold); font-weight: 600; font-size: 6pt; }
+
+    .f-badge {
+      position: absolute; bottom: 5mm; right: 5mm;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 5.5pt; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.35);
+      padding: 1.5px 5px; border-radius: 1px;
+      z-index: 1;
+    }
+
+    /* DORSO */
+    .dorso {
+      background: var(--dark3);
+      border: 1px solid rgba(201,168,76,0.12);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5mm 6mm;
+      gap: 0;
+    }
+
+    .dorso::after {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 1.5px; background: var(--gold);
+    }
+
+    .dorso-left {
+      display: flex; flex-direction: column;
+      align-items: flex-start; gap: 2mm;
+    }
+
+    .dorso-logo svg { width: 14mm; height: 14mm; }
+
+    .dorso-web {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 7.5pt; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .dorso-tags {
+      display: flex; flex-wrap: wrap; gap: 1mm;
+      max-width: 50mm;
+    }
+
+    .dorso-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 4.5pt; font-weight: 600;
+      letter-spacing: 0.5px; text-transform: uppercase;
+      color: #5a5a5a;
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 1px 3px; border-radius: 1px;
+    }
+
+    .dorso-right {
+      display: flex; flex-direction: column;
+      align-items: center; gap: 1.5mm;
+    }
+
+    .dorso-qr-wrap {
+      background: #fff;
+      padding: 2mm;
+      border-radius: 1px;
+      line-height: 0;
+    }
+
+    .dorso-qr-wrap canvas, .dorso-qr-wrap img {
+      width: 20mm !important;
+      height: 20mm !important;
+      display: block;
+    }
+
+    .dorso-qr-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 5.5pt; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: #4caf50;
+    }
+
+    /* PRINT */
+    @media print {
+      body { background: #fff; padding: 20mm; gap: 10mm; }
+      h1, .instrucciones, .label { display: none; }
+      .tarjeta {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        box-shadow: none;
+        border: 0.5pt solid #ccc;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Tarjeta Profesional · Para Imprimir</h1>
+
+<div class="instrucciones">
+  <strong>Cómo imprimir:</strong> Chrome → <strong>Ctrl+P</strong> → Más opciones → Papel A4 · Sin márgenes · Activar <strong>"Gráficos de fondo"</strong>. Llevalo a imprenta y pedí que recorten a <strong>8,5 × 5,5 cm</strong>.
+</div>
+
+<!-- FRENTE -->
+<div class="label">· FRENTE ·</div>
+
+<div class="tarjeta frente">
+  <div class="frente-inner">
+    <div class="f-top">
+      <div class="f-logo">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,2 98,27 98,73 50,98 2,73 2,27" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="1.5"/>
+          <polygon points="50,10 90,30 90,70 50,90 10,70 10,30" fill="rgba(201,168,76,0.06)" stroke="#c9a84c" stroke-width="2"/>
+          <text x="50" y="56" text-anchor="middle" font-family="'Barlow Condensed',Arial" font-weight="900" font-size="26" fill="#c9a84c">FMD</text>
+          <text x="50" y="68" text-anchor="middle" font-family="'Barlow Condensed',Arial" font-size="8" fill="#666" letter-spacing="3">M·M·O</text>
+        </svg>
+      </div>
+      <div>
+        <div class="f-nombre">Franco Martín<br/>Durán</div>
+        <div class="f-titulo">Maestro Mayor de Obras</div>
+      </div>
+    </div>
+
+    <div class="f-divider"></div>
+
+    <div class="f-contacto">
+      <div class="f-row"><b>T</b> +54 11 3041-4187</div>
+      <div class="f-row"><b>@</b> francomduran@gmail.com</div>
+      <div class="f-row"><b>W</b> francoduran.com.ar</div>
+      <div class="f-row"><b>·</b> Ciudad de Buenos Aires · CABA</div>
+    </div>
+  </div>
+  <div class="f-badge">CPIC Mat. N° 9460</div>
+</div>
+
+<!-- DORSO -->
+<div class="label">· DORSO ·</div>
+
+<div class="tarjeta dorso">
+  <div class="dorso-left">
+    <div class="dorso-logo">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="50,2 98,27 98,73 50,98 2,73 2,27" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
+        <polygon points="50,10 90,30 90,70 50,90 10,70 10,30" fill="rgba(201,168,76,0.06)" stroke="#c9a84c" stroke-width="1.5"/>
+        <text x="50" y="56" text-anchor="middle" font-family="'Barlow Condensed',Arial" font-weight="900" font-size="26" fill="#c9a84c">FMD</text>
+        <text x="50" y="68" text-anchor="middle" font-family="'Barlow Condensed',Arial" font-size="8" fill="#666" letter-spacing="3">M·M·O</text>
+      </svg>
+    </div>
+    <div class="dorso-web">francoduran.com.ar</div>
+    <div class="dorso-tags">
+      <span class="dorso-tag">Dirección de Obra</span>
+      <span class="dorso-tag">Planos</span>
+      <span class="dorso-tag">Refacciones</span>
+      <span class="dorso-tag">Gas</span>
+      <span class="dorso-tag">Sanitarios</span>
+      <span class="dorso-tag">Electricidad</span>
+      <span class="dorso-tag">Habilitaciones</span>
+      <span class="dorso-tag">Regularizaciones</span>
+    </div>
+  </div>
+  <div class="dorso-right">
+    <div class="dorso-qr-wrap">
+      <div id="qr-dorso"></div>
+    </div>
+    <div class="dorso-qr-label">WhatsApp</div>
+  </div>
+</div>
+
+<script>
+  new QRCode(document.getElementById('qr-dorso'), {
+    text: 'https://wa.me/5491130414187',
+    width: 200,
+    height: 200,
+    colorDark: '#000000',
+    colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.M
+  });
+</script>
+
+</body>
+</html>
